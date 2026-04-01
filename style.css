@@ -1,0 +1,75 @@
+/*
+Theme Name: Mozaika-Garantshkaf
+Template: mozaika
+*/
+ 
+ 
+ 
+ /*** OTHER ***/
+.home-section input,
+.home-section textarea {
+	color: white !important
+}
+ /*** END OTHER ***/
+
+
+
+/*** BUTTONS ***/
+input.btn.btn-danger {
+    min-width: 150px;
+}
+button.btn.btn-danger, input.btn.btn-danger {
+    background: linear-gradient(91.89deg, #FC4A1A -16.07%, #F7B733 124.94%);
+    border-radius: var(--border-radius-medium);
+    border: none;
+    padding: 15px;
+    height: 60px;
+    font-family: Gilroy-Black;
+    letter-spacing: 0.25em;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #F5F5F5;
+    text-transform: uppercase;
+    transition: .25s;
+}
+
+input.btn.btn-corporate-color-outline-1 {
+    border: 2px solid #FA8026;
+    border-radius: var(--border-radius-medium);
+    padding: 13px;
+    min-width: 150px;
+    height: 60px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.125em;
+    color: #FA8026;
+    text-transform: uppercase;
+}
+
+input.btn.btn-corporate-color-outline-1:hover {
+    background: linear-gradient(91.89deg, #FC4A1A -16.07%, #F7B733 124.94%);
+    color: #F5F5F5;
+}
+/*** END BUTTONS ***/
+
+
+
+/*** FAQ SECTION ***/
+section#answers .accordion-button::after,
+section#answers .accordion-button:not(.collapsed)::after {
+    background-image: url(img/ico/accordion-arrow.svg);
+}
+/*** END FAQ SECTION ***/
+
+
+
+/*** SECTION FOOTER ***/
+footer#footer {
+	text-align: inherit;
+}
