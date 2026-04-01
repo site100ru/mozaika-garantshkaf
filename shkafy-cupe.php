@@ -346,7 +346,7 @@ include 'header.php';
 				<div class="col-12 col-md-6 mb-3 mb-md-0 section-image order-1 order-md-0">
 					<div class="single-image-wrapper">
 						<div class="approximation img-wrapper position-relative gallery-2691">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card.webp" class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Скидка до 25%. Акция до 31 марта">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card.webp" class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Скидка до 25%. Акция до 30 апреля">
 						</div>
 					</div>
 				</div>
@@ -355,7 +355,7 @@ include 'header.php';
 					<div class="single-image-wrapper">
 						<div class="approximation img-wrapper position-relative gallery-2691">
 							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card-2.webp"
-								class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 31 марта">
+								class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 30 апреля">
 						</div>
 					</div>
 				</div>
