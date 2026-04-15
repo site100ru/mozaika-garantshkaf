@@ -631,7 +631,7 @@
                                     <div class="col-12 col-md-6 col-xl-3 mt-4">
                                         <label for="feedback-phone" class="mb-1">Ваш телефон <span class="form__required">*</span></label>
                                         <div>
-                                            <input type="text" class="form-control telMask" id="feedback-phone" name="form-phone" placeholder="Ваш телефон" inputmode="text" />
+                                            <input type="text" class="form-control telMask" id="feedback-phone" name="form-phone" placeholder="Ваш телефон" inputmode="text" required=""/>
                                         </div>
                                     </div>
 
