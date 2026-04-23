@@ -210,7 +210,7 @@ $category_term_id = $term->term_id;
                         ?>
             <div class="col-md-6 col-lg-3">
               <div class="mb-4 pb-0 pb-md-3">
-                <a class="text-decoration-none d-flex flex-column align-items-center align-items-lg-start" href="#"
+                <a class="text-decoration-none d-flex flex-column align-items-center" href="#"
                   onClick="modalGalleryOn('img-<?php echo get_the_ID(); ?>-0'); return false;">
                   <?php
                                                 get_template_part('template-parts/cards/card', null, array(
