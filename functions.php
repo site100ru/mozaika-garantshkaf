@@ -177,16 +177,16 @@ function add_location_rewrite_rule() {
 		'top' // Высокий приоритет
 	);
 	
+	// Обновляем правила (выполнить 1 раз, потом можно закомментировать, чтобы не нагружать сайт!)
+	flush_rewrite_rules();
+}
+
 	// Добавляем параметр "location" в разрешенные query_vars
 	add_filter('query_vars', 'add_location_query_var');
 	function add_location_query_var($vars) {
 		$vars[] = 'location';
 		return $vars;
 	}
-	
-	// Обновляем правила (выполнить 1 раз, потом можно закомментировать, чтобы не нагружать сайт!)
-	flush_rewrite_rules();
-}
 
 
 // 2. Перенаправляем с URL старого вида на новый /страница/регион/
@@ -212,12 +212,13 @@ function my_extra_fields() {
 /* Код блока галереи */
 function extra_fields_box_func( $post ){
 	for ($i=1; $i<=9; $i++) { ?>
-		<label>URL&#160;изображения <?php echo $i; ?>:</label>
-		<input type="text" name="extra[img-<?php echo $i; ?>]" value="<?php echo get_post_meta($post->ID, '_img-'.$i, 1); ?>" style="width: 100%;">
-		<div style="clear: both;"></div>
-	<? } ?>
-		<input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
-	<?php
+<label>URL&#160;изображения <?php echo $i; ?>:</label>
+<input type="text" name="extra[img-<?php echo $i; ?>]" value="<?php echo get_post_meta($post->ID, '_img-'.$i, 1); ?>"
+  style="width: 100%;">
+<div style="clear: both;"></div>
+<?php } ?>
+<input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+<?php
 }
 
 // включаем обновление полей при сохранении

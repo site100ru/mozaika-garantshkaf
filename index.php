@@ -441,7 +441,7 @@
 				<div class="row justify-content-center">
 					<div class="col-md-8">
 						<div style="position: relative">
-							<video  id="video-player" playsinline="playsinline"  loop="loop" poster="https://garantshkaf.ru/wp-content/themes/garantshkaf-3/img/video-poster.jpg">
+							<video  id="video-player" playsinline="playsinline"  loop="loop" poster="https://garantshkaf.ru/wp-content/themes/mozaika-garantshkaf/img/video-poster.jpg">
 								<!-- muted="muted" autoplay="autoplay" -->
 								<!-- <source src="header-bg.ogv" type='video/ogg; codecs="theora, vorbis"'> -->
 								<source  src="<?php echo get_stylesheet_directory_uri(); ?>/videos/video.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>

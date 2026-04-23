@@ -998,6 +998,12 @@ a.btn.btn-danger:focus {
 	color: #00a3d3;
 }
 
+.portfolio-section .nav-scroller {
+	text-transform: uppercase; 
+	font-family: 'HelveticaNeueCyr-Light'; 
+	font-weight: bold;
+}
+
 .nav-scroller {
 	position: relative;
 	z-index: 2;
@@ -3750,4 +3756,22 @@ img.yandex-logo {
 #calculatePriceWithoutDownloadModal .form-control {
     margin: 0;
     text-align: start;
+}
+
+.portflio {
+		line-height: 1;
+    align-content: center;
+}
+
+.portfolio-section .scroller-mobile svg,
+.portfolio-section .scroller svg {
+	fill: #fc4a1a;
+}
+
+.portfolio-section .scroller .active:not(#carouselTestimonials .active) {
+	color: #fc4a1a !important;
+}
+
+.portfolio-section .scroller .nav-item a:hover {
+		color: #fc4a1a;
 }
