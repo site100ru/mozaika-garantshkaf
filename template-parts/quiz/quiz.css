@@ -248,7 +248,7 @@
 }
 
 #quiz .quiz-question-wrapper {
-	border: 1px solid #999;
+	border: 1px solid #E2E2E2;
 	border-radius: var(--border-radius-medium);
 	background: #ffffff;
 	padding: 40px 0 40px 40px;
