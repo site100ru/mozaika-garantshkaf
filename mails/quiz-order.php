@@ -30,8 +30,7 @@
 	$headers .= "Content-type: text/plain; charset=utf-8\r\n";
 
 	/* Send mails */
-	// mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail, $headers );
-	mail( "sidorov-vv3@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail, $headers );
+	mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail, $headers );
 
 	$_SESSION['win'] = 1;
 	$_SESSION['recaptcha'] = '<p>Спасибо, что Вы обратились именно к нам. Мы свяжемся с Вами в ближайшее время.</p>';
