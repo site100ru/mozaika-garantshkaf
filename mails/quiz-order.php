@@ -24,9 +24,14 @@
 	$mail .= "Глубина: ".$answer2_4."\n\n";
 	$mail .= "Количество дверей: ".$answer3."\n\n";
 
+	$headers = "From: info@garantshkaf.ru\r\n";
+	$headers .= "Reply-To: info@garantshkaf.ru\r\n";
+	$headers .= "Return-Path: info@garantshkaf.ru\r\n";
+	$headers .= "Content-type: text/plain; charset=utf-8\r\n";
+
 	/* Send mails */
-	mail( "garantshkaf@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail );
-	mail( "vasilyev-r@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail );
+	// mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail, $headers );
+	mail( "sidorov-vv3@mail.ru", "Заявка на расчет шкафа с сайта гарантшкаф.рф.", $mail, $headers );
 
 	$_SESSION['win'] = 1;
 	$_SESSION['recaptcha'] = '<p>Спасибо, что Вы обратились именно к нам. Мы свяжемся с Вами в ближайшее время.</p>';
