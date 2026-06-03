@@ -109,7 +109,9 @@ add_action( 'after_setup_theme', function() {
 		'mobail-header-collapse' => 'Mobail header collapse',
 		'sliding-header-collapse' => 'Sliding header collapse',
 		'contacts-desktop-menu' => 'Contacts desktop menu',
-		'navbarSupportedContent2' => 'navbarSupportedContent2'
+		'navbarSupportedContent2' => 'navbarSupportedContent2',
+		'footer-menu-left' => 'Меню в подвале (левая колонка)',
+		'footer-menu-right' => 'Меню в подвале (правая колонка)'
 	] );
 } );
 /* End register a new menu */
@@ -213,8 +215,7 @@ function my_extra_fields() {
 function extra_fields_box_func( $post ){
 	for ($i=1; $i<=9; $i++) { ?>
 <label>URL&#160;изображения <?php echo $i; ?>:</label>
-<input type="text" name="extra[img-<?php echo $i; ?>]" value="<?php echo get_post_meta($post->ID, '_img-'.$i, 1); ?>"
-  style="width: 100%;">
+<input type="text" name="extra[img-<?php echo $i; ?>]" value="<?php echo get_post_meta($post->ID, '_img-'.$i, 1); ?>" style="width: 100%;">
 <div style="clear: both;"></div>
 <?php } ?>
 <input type="hidden" name="extra_fields_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
