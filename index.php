@@ -1967,7 +1967,6 @@
 		<!-- Menu -->
 		<script>vyezjalo();</script>
 		
-		
 		<!-- New telephone number mask -->
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/inputmask.min.js"></script>
 		<script>
