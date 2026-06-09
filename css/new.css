@@ -224,6 +224,30 @@
 	opacity: 1;
 }
 
+/* Точки-разделители в шапке (menu-decoration-point) — скрываем svg
+   и рисуем свою точку 6×6. Работает и в основном, и в выезжающем хедере. */
+.header-nav-bottom li.d-xl-inline {
+	align-self: center;
+}
+
+.header-nav-bottom li.d-xl-inline .nav-link {
+	display: inline-flex;
+	align-items: center;
+}
+
+.header-nav-bottom li.d-xl-inline .nav-link img {
+	display: none;
+}
+
+.header-nav-bottom li.d-xl-inline .nav-link::after {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 2px;
+	background: #FFE600;
+	margin-top: 2px;
+}
+
 /* Кнопка: сплошной градиент (используется для «Рассчитать» и «Смотреть все») */
 .btn-grad {
 	display: inline-flex;
@@ -1420,6 +1444,11 @@ textarea.form__field {
 .footer__menu .dropdown-menu {
 	margin: 0;
 	padding: 8px 0;
+}
+
+/* line-height у пунктов подвала — как в шапке (не normal от .footer__menu) */
+.footer__menu .dropdown-item {
+	line-height: var(--bs-body-line-height);
 }
 
 
