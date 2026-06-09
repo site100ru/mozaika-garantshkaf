@@ -119,7 +119,8 @@
 
 /* --- Цвета --- */
 :root {
-	--corporate-color-1: #ffe600;
+	--corporate-color-1: linear-gradient(to right, #fc4a1a, #f7b733);
+	--corporate-color-1-text: #ffe600;
 	--corporate-color-2: #f7b733;
 	--corporate-color-3: #fc4a1a;
 	--white-color: #fff;
@@ -189,14 +190,15 @@
 	transition: color 0.25s, -webkit-text-fill-color 0.25s;
 }
 
+/* градиентная рамка (прозрачный центр) */
 .btn-grad-outline::before {
 	content: "";
 	position: absolute;
 	inset: 0;
+	border: 1px solid transparent;
 	border-radius: 20px;
-	padding: 2px;
-	background: linear-gradient(90deg, var(--corporate-color-3) 0%, var(--corporate-color-2) 100%);
-	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	background: linear-gradient(90deg, var(--corporate-color-3) 0%, var(--corporate-color-2) 100%) border-box;
+	-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
 }
@@ -258,6 +260,10 @@
 	z-index: 1;
 }
 
+.hero__header {
+	z-index: 5;
+}
+
 /* --- Верхняя плашка --- */
 .topbar {
 	display: flex;
@@ -280,7 +286,6 @@
 	color: var(--light-color);
 	text-decoration: none;
 	font-family: var(--third-family);
-	font-style: italic;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.25;
@@ -353,7 +358,7 @@
 }
 
 .hero__left h1 .hl {
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1-text);
 }
 
 /* --- Список преимуществ --- */
@@ -394,7 +399,7 @@
 }
 
 .hero__text .hl {
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1-text);
 }
 
 /* ==========================================================================
@@ -417,7 +422,7 @@ div.form {
 	letter-spacing: normal;
 	text-transform: none;
 	text-align: center;
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1-text);
 }
 
 .form__subtitle {
@@ -516,9 +521,10 @@ textarea.form__field {
 
 /* .works__more — кнопка «Смотреть все» поверх общего .btn-grad */
 .works__more {
-	height: 60px;
+	height: 50px;
 	padding: 0 36px;
 	border-radius: var(--border-radius-30);
+	font-size: 14px;
 }
 
 /* Чекбокс */
@@ -552,7 +558,7 @@ textarea.form__field {
 	content: "";
 	width: 12px;
 	height: 12px;
-	background: linear-gradient(90deg, #fc4a1a 0%, #f7b733 100%);
+	background: #fc4a1a;
 }
 
 .form__agree-text {
@@ -636,6 +642,7 @@ textarea.form__field {
 	font-size: 20px;
 	color: var(--white-color);
 	text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+	line-height: 1;
 }
 
 .work-card__price {
@@ -647,6 +654,7 @@ textarea.form__field {
 	font-size: 20px;
 	color: var(--white-color);
 	text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+	line-height: 1;
 }
 
 .work-card__text {
@@ -999,6 +1007,11 @@ textarea.form__field {
 .quiz-step__nav .btn-grad,
 .quiz-step__nav .btn-grad-outline {
 	border-radius: 25px;
+}
+
+/* Кнопка «Следующий» — шрифт 14px */
+.quiz-step__nav .quiz-nav-next {
+	font-size: 14px;
 }
 
 .quiz-step__nav .quiz-nav-prev {
@@ -1376,7 +1389,13 @@ textarea.form__field {
 	gap: 20px;
 }
 
-.footer__menu a {
+.footer__menu>li {
+	line-height: normal;
+}
+
+/* Футерные стили — только верхний уровень (пункт-ссылка и dropdown-toggle).
+   Вложенные .dropdown-item не трогаем — они должны быть 1:1 как в шапке. */
+.footer__menu>li>a {
 	color: var(--light-color);
 	text-decoration: none;
 	text-transform: uppercase;
@@ -1385,10 +1404,24 @@ textarea.form__field {
 	transition: color .2s;
 }
 
-.footer__menu a:hover,
-.footer__menu a.is-active {
+.footer__menu>li>a:hover,
+.footer__menu>li>a.is-active {
 	color: var(--corporate-color-1);
 }
+
+/* Декоративные точки-разделители (menu-decoration-point) — в подвале не нужны */
+.footer__menu li.d-xl-inline {
+	display: none !important;
+}
+
+/* Вложенные пункты — Bootstrap-дропдаун (как в шапке) */
+/* Верх и низ выпадающего меню одинаковые (равный паддинг, без внешнего отступа) */
+.header-nav-bottom .dropdown-menu,
+.footer__menu .dropdown-menu {
+	margin: 0;
+	padding: 8px 0;
+}
+
 
 .footer__social {
 	display: flex;

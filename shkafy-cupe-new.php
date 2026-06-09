@@ -128,7 +128,7 @@ include 'header.php';
 			<div class="row align-items-center">
 
 				<!-- Левая колонка: заголовок + преимущества -->
-				<div class="col-lg-6 hero__left">
+				<div class="col-lg-6 col-xl-7 hero__left">
 					<h1>
 						<span class="hl">Шкафы-купе</span> на&nbsp;заказ от&nbsp;производителя <span class="hl"><?php echo $location; ?></span>
 					</h1>
@@ -155,7 +155,7 @@ include 'header.php';
 				</div>
 
 				<!-- Правая колонка: форма -->
-				<div class="col-lg-6 col-xl-4 offset-xl-2 hero__form">
+				<div class="col-lg-6 col-xl-4 offset-xl-1 hero__form">
 					<div class="form">
 						<h2 class="form__title">Рассчитаем точную стоимость шкафа-купе за 15 мин!</h2>
 						<p class="form__subtitle">Опишите шкаф-купе своими словами. При возможности прикрепите изображение</p>
@@ -805,8 +805,9 @@ include 'header.php';
 					'theme_location' => 'footer-menu-left',
 					'container'      => false,
 					'menu_class'     => 'footer__menu',
-					'depth'          => 1,
+					'depth'          => 2,
 					'fallback_cb'    => '__return_false',
+					'walker'         => new bootstrap_5_wp_nav_menu_walker(),
 				));
 				?>
 			</div>
@@ -818,8 +819,9 @@ include 'header.php';
 					'theme_location' => 'footer-menu-right',
 					'container'      => false,
 					'menu_class'     => 'footer__menu',
-					'depth'          => 1,
+					'depth'          => 2,
 					'fallback_cb'    => '__return_false',
+					'walker'         => new bootstrap_5_wp_nav_menu_walker(),
 				));
 				?>
 			</div>

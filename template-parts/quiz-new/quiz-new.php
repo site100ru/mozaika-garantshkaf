@@ -299,13 +299,13 @@ endif;
 		var steps = ['question-2', 'question-3', 'question-4', 'question-5', 'question-6', 'question-7'];
 		var current = 0;
 
-		function show(n) {
+		function show(n, scroll) {
 			steps.forEach(function (id, idx) {
 				var el = document.getElementById(id);
 				if (el) el.style.display = idx === n ? 'block' : 'none';
 			});
 			current = n;
-			root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			if (scroll) root.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		}
 
 		// Сбор ответов текущего шага в скрытые поля
@@ -341,13 +341,13 @@ endif;
 					return;
 				}
 				collect(id);
-				if (current < steps.length - 1) show(current + 1);
+				if (current < steps.length - 1) show(current + 1, true);
 			});
 		});
 
 		root.querySelectorAll('.quiz-nav-prev').forEach(function (btn) {
 			btn.addEventListener('click', function () {
-				if (current > 0) show(current - 1);
+				if (current > 0) show(current - 1, true);
 			});
 		});
 
