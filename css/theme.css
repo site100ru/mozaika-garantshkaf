@@ -476,6 +476,30 @@ a.btn.btn-danger:focus {
 	text-decoration: none;
 	background-color: white;
 }
+
+/* Точки-разделители в шапке (menu-decoration-point) — скрываем svg
+   и рисуем свою точку 6×6. Работает и в основном, и в выезжающем хедере. */
+.header-nav-bottom li.d-xl-inline {
+	align-self: center;
+}
+
+.header-nav-bottom li.d-xl-inline .nav-link {
+	display: inline-flex;
+	align-items: center;
+}
+
+.header-nav-bottom li.d-xl-inline .nav-link img {
+	display: none;
+}
+
+.header-nav-bottom li.d-xl-inline .nav-link::after {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 2px;
+	background: #FFE600;
+	margin-top: 2px;
+}
 /*** END MENU ***/
 
 /*** HOME SECTION ***/
