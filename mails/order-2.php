@@ -28,7 +28,7 @@
 			$headers .= "Content-type: text/html; charset=utf-8\r\n";
 			
 			mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", 
-			"Заявка с сайта гарантшкаф.рф.", "Потенциальный клиент ".$name." просит рассчитать Вас стоимость шкафа и перезвонить на номер " . $tel, $headers 
+			"Заявка с сайта garantshkaf.ru.", "Потенциальный клиент ".$name." просит рассчитать Вас стоимость шкафа и перезвонить на номер " . $tel, $headers 
 			);
 
 			$_SESSION['win'] = 1;
