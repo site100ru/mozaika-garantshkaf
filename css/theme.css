@@ -3559,6 +3559,8 @@ li.nav-item:first-child a.nav-link {
 	position: fixed;
 	top: -100px;
 	z-index: 999999999;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
 #sliding-header .bottom_link:hover,
