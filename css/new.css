@@ -1468,6 +1468,7 @@ textarea.form__field {
 	font-size: 16px;
 	text-align: center;
 	color: var(--white-color);
+	margin-bottom: 5px;
 }
 
 .footer__new__dev {

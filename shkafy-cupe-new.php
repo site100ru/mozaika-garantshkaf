@@ -863,7 +863,7 @@ include 'header.php';
 
 	<div class="container">
 		<div id="footer__new">
-			<p class="footer__new__copy">©<?php echo date('Y'); ?>г. Мебельная фабрика «Гарантшкаф»</p>
+			<p class="footer__new__copy">©<?php echo date('Y'); ?> Мебельная фабрика «Гарантшкаф»</p>
 			<p class="footer__new__dev">Создание, продвижение и поддержка сайтов: <a href="https://site100.ru" target="_blank">site<span>100</span>.ru</a></p>
 		</div>
 	</div>
