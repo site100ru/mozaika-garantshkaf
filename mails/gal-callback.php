@@ -25,7 +25,7 @@
 			$headers .= "BCC: info@garantshkaf.ru\r\n";
 			$headers .= "Content-type: text/html; charset=utf-8\r\n";
 
-			mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Расчёт стоимости с сайта гарантшкаф.рф.", 
+			mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Расчёт стоимости с сайта garantshkaf.ru.", 
 				"Объект: " . $product . "\n" .
 				"Потенциальный клиент: " . $name . "\n" .
 				"Телефон: " . $tel . "\n" .
