@@ -1458,6 +1458,7 @@ textarea.form__field {
 
 .footer #footer__new {
 	padding: 20px 0;
+	line-height: normal;
 }
 
 .footer__new__copy {
