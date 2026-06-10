@@ -707,7 +707,7 @@ textarea.form__field {
 
 .lead.lead-2 {
 	margin-top: 0;
-	padding: 0 0 30px 0;
+	padding: 0 0 50px 0;
 }
 
 .lead__photo {
@@ -1373,7 +1373,7 @@ textarea.form__field {
 	flex: 0 0 auto;
 	display: inline-flex;
 	align-items: center;
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1-text);
 }
 
 .footer__contact-ico img {
@@ -1406,7 +1406,7 @@ textarea.form__field {
 
 .footer__menu>li>a:hover,
 .footer__menu>li>a.is-active {
-	color: var(--corporate-color-1);
+	color: var(--corporate-color-1-text);
 }
 
 /* Декоративные точки-разделители (menu-decoration-point) — в подвале не нужны */
