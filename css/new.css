@@ -1,0 +1,1685 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   new.css — стили НОВОЙ страницы «Шкафы-купе» (shkafy-cupe-new.php)
+   Отдельный файл. Старые стили темы не затрагиваются.
+   ========================================================================== */
+
+/* --- HelveticaNeueCyr --- */
+@font-face {
+	font-family: 'HelveticaNeueCyr';
+	src: url('../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueCyr';
+	src: url('../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Roman.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueCyr';
+	src: url('../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueCyr';
+	src: url('../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'HelveticaNeueCyr';
+	src: url('../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* --- Helvetica Neue (Condensed) --- */
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/HelveticaNeue/HelveticaNeueBoldCondensed.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/HelveticaNeue/HelveticaNeueBlackCondensed.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* --- Gilroy --- */
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy/Gilroy-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy/Gilroy-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy/Gilroy-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy/Gilroy-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy/Gilroy-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* --- Caveat --- */
+@font-face {
+	font-family: 'Caveat';
+	src: url('../fonts/Caveat/Caveat.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ==========================================================================
+   ПЕРЕМЕННЫЕ
+   ========================================================================== */
+
+/* --- Цвета --- */
+:root {
+	--corporate-color-1: linear-gradient(to right, #fc4a1a, #f7b733);
+	--corporate-color-1-text: #ffe600;
+	--corporate-color-2: #f7b733;
+	--corporate-color-3: #fc4a1a;
+	--white-color: #fff;
+	--light-color: #c8c8c8;
+	--dark-color: #4b4b4b;
+}
+
+/* --- Радиусы --- */
+:root {
+	--border-radius-30: 30px;
+	--border-radius-small: 5px;
+	--border-radius-medium: 15px;
+	--border-radius-large: 25px;
+}
+
+/* --- Шрифты --- */
+:root {
+	--font-family: "HelveticaNeueCyr", sans-serif;
+	--second-family: "Helvetica Neue", sans-serif;
+	--third-family: "Gilroy", sans-serif;
+	--font3: "Roboto", sans-serif;
+	--font4: "Calistoga", sans-serif;
+	--font5: "Caveat", sans-serif;
+}
+
+/* ==========================================================================
+   ОБЩИЕ КОМПОНЕНТЫ
+   ========================================================================== */
+
+/* Фон секций */
+.bg {
+	background: #f5f5f5;
+}
+
+/* Заголовки секций */
+.section-title-wrapper h2.section-title {
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 30px;
+	letter-spacing: normal;
+	color: var(--dark-color);
+}
+
+/* Кнопка: прозрачный фон + градиентный бордер + градиентный текст
+   (используется для «Прикрепить файл» и «Рассчитать» в карточке работ) */
+.btn-grad-outline {
+	position: relative;
+	isolation: isolate;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	padding: 0 24px;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	background: linear-gradient(90deg, var(--corporate-color-3) 0%, var(--corporate-color-2) 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-align: center;
+	transition: color 0.25s linear, -webkit-text-fill-color 0.25s linear;
+}
+
+/* градиентная рамка (прозрачный центр) */
+.btn-grad-outline::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 1px solid transparent;
+	border-radius: 20px;
+	background: linear-gradient(90deg, var(--corporate-color-3) 0%, var(--corporate-color-2) 100%) border-box;
+	-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+}
+
+/* плавная заливка фоном при наведении */
+.btn-grad-outline::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	border-radius: 20px;
+	background: linear-gradient(91.89deg, #fc4a1a -16.07%, #f7b733 124.94%);
+	opacity: 0;
+	transition: opacity 0.25s;
+}
+
+.btn-grad-outline:hover {
+	-webkit-text-fill-color: #f5f5f5;
+	color: #f5f5f5 !important;
+}
+
+.btn-grad-outline:hover::after {
+	opacity: 1;
+}
+
+/* Кнопка: сплошной градиент (используется для «Рассчитать» и «Смотреть все») */
+.btn-grad {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	background: linear-gradient(90deg, var(--corporate-color-3) 0%, var(--corporate-color-2) 100%);
+	color: var(--white-color);
+	font-family: var(--font-family);
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	transition: 0.25s;
+}
+
+.btn-grad:hover {
+	box-shadow: 0px 0px 8px #fb5e1f;
+}
+
+/* ==========================================================================
+   HERO / ШАПКА (section .hero) — над фоновым изображением
+   ========================================================================== */
+
+.hero {
+	position: relative;
+	background: url('../img/ico/advantage/new-main.jpg') center center / cover no-repeat;
+	color: var(--white-color);
+}
+
+.hero>* {
+	position: relative;
+	z-index: 1;
+}
+
+.hero__header {
+	z-index: 5;
+}
+
+/* --- Верхняя плашка --- */
+.topbar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 60px;
+	padding: 10px 0;
+}
+
+.topbar__info {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.topbar__item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--light-color);
+	text-decoration: none;
+	font-family: var(--third-family);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.25;
+	transition: opacity .2s;
+}
+
+.topbar__item:hover {
+	color: var(--light-color);
+	opacity: .8;
+}
+
+.topbar__item img {
+	display: block;
+	flex: 0 0 auto;
+}
+
+.topbar__phone {
+	font-family: var(--font-family);
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	color: var(--light-color);
+}
+
+.topbar__social {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.topbar__social a {
+	display: block;
+	line-height: 0;
+	transition: opacity .2s;
+}
+
+.topbar__social a:hover {
+	opacity: .8;
+}
+
+.topbar__social img {
+	display: block;
+}
+
+.header-nav-bottom .navbar-nav {
+	gap: 16px;
+}
+
+/* --- Тонкая линия во всю ширину --- */
+.hero__line {
+	width: 100%;
+	height: 0;
+	border-top: 1px solid #7d7d7d;
+}
+
+/* ==========================================================================
+   HERO КОНТЕНТ (заголовок + форма)
+   ========================================================================== */
+
+.hero__content {
+	padding: 20px 0 150px;
+}
+
+/* --- Заголовок --- */
+.hero__left h1 {
+	margin: 0 0 50px;
+	font-family: var(--second-family);
+	font-weight: 900;
+	font-size: 38px;
+	line-height: 135%;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--white-color);
+}
+
+.hero__left h1 .hl {
+	color: var(--corporate-color-1-text);
+}
+
+/* --- Список преимуществ --- */
+.hero__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hero__list li {
+	display: flex;
+	align-items: flex-start;
+	padding-top: 16px;
+}
+
+.hero__list li:first-child {
+	padding-top: 0;
+}
+
+.hero__check {
+	flex: 0 0 auto;
+	padding-left: 62px;
+	line-height: 1;
+}
+
+.hero__check svg {
+	display: block;
+}
+
+.hero__text {
+	padding-left: 16px;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 135%;
+	letter-spacing: 0.1em;
+	color: var(--white-color);
+	max-width: 526px;
+}
+
+.hero__text .hl {
+	color: var(--corporate-color-1-text);
+}
+
+/* ==========================================================================
+   ФОРМА РАСЧЁТА
+   ========================================================================== */
+
+div.form {
+	background: rgba(38, 35, 81, 0.8);
+	border-radius: var(--border-radius-large);
+	padding: 40px 20px;
+}
+
+.form__title {
+	margin: 0 0 16px;
+	padding: 0;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 1.1;
+	letter-spacing: normal;
+	text-transform: none;
+	text-align: center;
+	color: var(--corporate-color-1-text);
+}
+
+.form__subtitle {
+	margin: 0 0 40px;
+	font-family: var(--third-family);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 135%;
+	text-align: center;
+	color: var(--white-color);
+}
+
+.form form {
+	margin: 0;
+}
+
+/* Поля */
+.form__field {
+	width: 100%;
+	height: 40px;
+	padding: 12px;
+	margin: 0;
+	border: 1px solid var(--light-color);
+	border-radius: 20px;
+	background: transparent;
+	color: var(--white-color);
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.form__field::placeholder {
+	color: var(--light-color);
+	opacity: 1;
+}
+
+.form__field:focus {
+	outline: none;
+	border-color: var(--corporate-color-2);
+}
+
+textarea.form__field {
+	height: auto;
+	min-height: 92px;
+	resize: vertical;
+	line-height: 1.3;
+	margin-bottom: 16px;
+}
+
+.form__names {
+	margin-bottom: 20px;
+}
+
+.form__names .form__field {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+/* Прикрепить файл: прозрачный фон + градиентный бордер + градиентный текст */
+.form__file {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 20px;
+}
+
+.form__file-label {
+	flex: 0 0 auto;
+}
+
+.form__file-input {
+	display: none;
+}
+
+.form__file-name {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	color: var(--white-color);
+}
+
+/* Кнопка "Рассчитать" */
+/* .form__submit — размеры поверх общего .btn-grad */
+.form__submit {
+	width: 100%;
+	height: 50px;
+	padding: 0 30px;
+	border-radius: var(--border-radius-large);
+	font-size: 14px;
+	letter-spacing: 0.05em;
+}
+
+/* .works__more — кнопка «Смотреть все» поверх общего .btn-grad */
+.works__more {
+	height: 50px;
+	padding: 0 36px;
+	border-radius: var(--border-radius-30);
+	font-size: 14px;
+}
+
+/* Чекбокс */
+.form__agree {
+	display: flex;
+	gap: 12px;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.form__agree-input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.form__agree-box {
+	flex: 0 0 auto;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #d9d9d9;
+	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2px;
+}
+
+.form__agree-input:checked+.form__agree-box::after {
+	content: "";
+	width: 12px;
+	height: 12px;
+	background: #fc4a1a;
+}
+
+.form__agree-text {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	color: var(--white-color);
+	line-height: normal;
+}
+
+.form__agree-text a {
+	color: var(--white-color);
+}
+
+/* ==========================================================================
+   ХЛЕБНЫЕ КРОШКИ (залезают на hero, скруглённые верхние углы)
+   ========================================================================== */
+.crumbs {
+	position: relative;
+	z-index: 2;
+	margin-top: -50px;
+	background: #f5f5f5;
+	border-radius: 50px 50px 0 0;
+	padding: 30px 0 30px;
+}
+
+.crumbs__nav {
+	font-family: var(--third-family);
+	font-weight: 300;
+	font-size: 18px;
+	color: #323232;
+}
+
+.crumbs__nav a {
+	color: #323232;
+	text-decoration: none;
+	transition: color .2s;
+}
+
+.crumbs__nav a:hover {
+	color: var(--corporate-color-3);
+}
+
+.crumbs__nav img {
+	margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   КАРТОЧКА РАБОТЫ (масонри)
+   ========================================================================== */
+.work-card {
+	margin-bottom: 30px;
+}
+
+.work-card__media {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--border-radius-large);
+	cursor: pointer;
+}
+
+.work-card__img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-large);
+	transition: transform .4s ease;
+}
+
+.work-card__media:hover .work-card__img {
+	transform: scale(1.06);
+}
+
+.work-card__title {
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	right: 24px;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--white-color);
+	line-height: 1;
+}
+
+.work-card__price {
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--white-color);
+	line-height: 1;
+}
+
+.work-card__text {
+	margin: 16px 0 0;
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	color: #4b4b4b;
+}
+
+.work-card__btn {
+	margin-top: 16px;
+}
+
+/* ==========================================================================
+   СЕКЦИИ (отступы сверху/снизу по 60px)
+   ========================================================================== */
+.section-stock {
+	padding: 30px 0;
+}
+
+.section-stock .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.stock__img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-large);
+}
+
+.works {
+	padding: 60px 0;
+}
+
+.works .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+/* ==========================================================================
+   ЛИД-ФОРМА (секция с фото: бело-слева / контент-справа)
+   ========================================================================== */
+.lead {
+	position: relative;
+	overflow: hidden;
+	border-radius: 50px 50px 0 0;
+}
+
+.lead.lead-2 {
+	margin-top: 0;
+	padding: 0 0 50px 0;
+}
+
+.lead__photo {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	z-index: 0;
+}
+
+.lead__photo-mobile {
+	display: none;
+}
+
+.lead .container {
+	position: relative;
+	z-index: 1;
+}
+
+.lead__form {
+	padding: 60px 0;
+	text-align: right;
+}
+
+.lead__form.section-title-wrapper {
+	margin-bottom: 0;
+}
+
+.lead__subtitle {
+	margin: 0 0 16px;
+	font-family: var(--third-family);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 135%;
+	text-align: right;
+	color: var(--dark-color);
+}
+
+.lead__points {
+	display: block;
+	margin: 0 0 60px auto;
+}
+
+/* Переопределения для лида (цвет — через .form--light, здесь только выравнивание вправо) */
+.lead__form .form__field {
+	text-align: right;
+}
+
+.lead__form .form__file {
+	justify-content: flex-end;
+}
+
+.lead__form .form__agree {
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+}
+
+.lead__form .form__agree-text a {
+	text-decoration-skip-ink: none;
+}
+
+.lead__social {
+	margin-top: 30px;
+	justify-content: flex-end;
+}
+
+/* Кнопка submit: на ПК прижата к краю (auto), на мобиле — во всю ширину */
+.lead__form .form__submit {
+	width: auto;
+}
+
+/* ==========================================================================
+   О ФАБРИКЕ (налезает на секцию выше на 50px)
+   ========================================================================== */
+.about {
+	position: relative;
+	z-index: 2;
+	margin-top: -50px;
+	padding: 30px 0;
+	border-radius: 50px 50px 0 0;
+}
+
+.about .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.about__img {
+	display: block;
+	width: 636px;
+	max-width: 100%;
+	height: 424px;
+	object-fit: cover;
+	border-radius: var(--border-radius-medium);
+}
+
+.about__text p {
+	margin: 0 0 20px;
+	font-family: var(--third-family);
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: var(--dark-color);
+}
+
+.about__text p:last-child {
+	margin-bottom: 0;
+}
+
+/* ==========================================================================
+   ПОЧЕМУ НАМ МОЖНО ДОВЕРИТЬ ЗАКАЗ
+   ========================================================================== */
+.why {
+	padding: 30px 0;
+}
+
+.why .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.why__grid {
+	--bs-gutter-x: 24px;
+	--bs-gutter-y: 40px;
+}
+
+.why-card {
+	display: flex;
+	gap: 16px;
+}
+
+.why-card__icon {
+	flex: 0 0 70px;
+	width: 70px;
+	height: 70px;
+}
+
+.why-card__title {
+	margin: 0 0 8px;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--dark-color);
+	text-align: left;
+	text-transform: none;
+	letter-spacing: normal;
+	line-height: 1.2;
+}
+
+.why-card__text {
+	margin: 0;
+	font-family: var(--third-family);
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: var(--dark-color);
+}
+
+/* ==========================================================================
+   ВИДЕО
+   ========================================================================== */
+.section-video {
+	padding: 30px 0;
+}
+
+.section-video .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+/* фиксируем размер, чтобы видео не «прыгало» при старте */
+.section-video #video-player {
+	display: block;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+/* ==========================================================================
+   ОТЗЫВЫ / ДИРЕКТОР / ФОРМА ЗАКАЗА
+   ========================================================================== */
+.section-testimonials {
+	padding: 30px 0;
+}
+
+.section-testimonials .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.section-testimonials .review-description {
+	font-family: var(--third-family);
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: var(--dark-color);
+}
+
+.section-testimonials .review-description a {
+	font-family: var(--third-family);
+	font-weight: 400;
+	color: var(--dark-color);
+	text-decoration: none;
+}
+
+.director {
+	padding: 30px 0;
+}
+
+.director-quote {
+	font-family: var(--third-family);
+	font-style: italic;
+	font-weight: 300;
+	font-size: 20px;
+	color: #4b4b4b;
+}
+
+/* ============================================================
+   КВИЗ (новый шаблон template-parts/quiz-new) — чистая разметка
+   ============================================================ */
+.quiz-new {
+	padding: 80px 0;
+}
+
+.quiz-new__subtitle {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 20px;
+	color: var(--dark-color);
+	margin-bottom: 16px;
+}
+
+.quiz-new__wrapper {
+	margin: 0;
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	border-radius: var(--border-radius-medium);
+}
+
+@media (min-width: 992px) {
+	.quiz-new__steps {
+		padding: 40px;
+	}
+}
+
+.quiz-options {
+	margin-bottom: 24px;
+}
+
+/* Разметка и состояние выбора пунктов берутся из оригинального
+   template-parts/quiz/quiz.css (.option_item / .shadow-wrapper и т.д.). */
+
+/* Низ шага: прогресс + навигация */
+.quiz-step__foot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 22px;
+	margin-top: 8px;
+}
+
+.quiz-progress {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex: 0 1 490px;
+	max-width: 490px;
+	min-width: 200px;
+}
+
+.quiz-progress__label {
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	color: var(--dark-color);
+	white-space: nowrap;
+}
+
+.quiz-new .progress {
+	flex: 1 1 auto;
+	border-radius: 20px;
+	background: #f0f0f0;
+}
+
+.quiz-new .progress-bar {
+	font-size: 12px;
+	color: var(--white-color);
+	background: linear-gradient(91.89deg, #fc4a1a -16.07%, #f7b733 124.94%);
+}
+
+.quiz-step__nav {
+	display: flex;
+	flex: 0 0 auto;
+	gap: 12px;
+}
+
+/* Кнопки навигации квиза — радиус 25px */
+.quiz-step__nav .btn-grad,
+.quiz-step__nav .btn-grad-outline {
+	border-radius: 25px;
+}
+
+/* Кнопка «Следующий» — шрифт 14px */
+.quiz-step__nav .quiz-nav-next {
+	font-size: 14px;
+}
+
+.quiz-step__nav .quiz-nav-prev {
+	min-width: 56px;
+	padding: 12px;
+}
+
+/* Неактивная кнопка «Назад» на первом шаге — серая */
+.btn-grad-outline:disabled {
+	cursor: default;
+	-webkit-text-fill-color: var(--light-color);
+	color: var(--light-color) !important;
+}
+
+.btn-grad-outline:disabled::before {
+	background: var(--light-color);
+}
+
+.btn-grad-outline:disabled:hover::after {
+	opacity: 0;
+}
+
+/* Поля финального шага */
+.quiz-new__inputs {
+	margin-bottom: 24px;
+}
+
+.quiz-new__label {
+	display: block;
+	margin-bottom: 8px;
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	color: var(--dark-color);
+}
+
+.quiz-new .form__required {
+	color: var(--corporate-color-3);
+}
+
+/* Колонка консультанта */
+.quiz-new__consult {
+	padding: 40px 0 0;
+	text-align: center;
+}
+
+@media (min-width: 992px) {
+	.quiz-new__consult {
+		padding: 40px;
+		margin-top: 50px;
+	}
+}
+
+.quiz-new__consult-title {
+	margin: 0 0 16px;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: #323232;
+}
+
+.quiz-new__consult-sub {
+	display: block;
+	margin: 0;
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: #323232;
+}
+
+.quiz-new__consult-photo {
+	margin: 25px 0;
+}
+
+.quiz-new__consult-photo img {
+	max-width: 150px;
+	border-radius: 50%;
+	border: 5px solid #e0e0e0;
+}
+
+.quiz-new__consult-name {
+	margin: 0 0 25px;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: #323232;
+}
+
+.quiz-new__consult-name span {
+	display: block;
+	margin-top: 16px;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: #323232;
+}
+
+.quiz-new__consult-tel {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 25px;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 18px;
+	color: var(--dark-color);
+	text-decoration: none;
+}
+
+.quiz-new__consult-social {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+}
+
+.quiz-new__consult-social img {
+	width: 32px;
+	height: 32px;
+}
+
+@media (min-width: 1200px) {
+	.quiz-new__consult {
+		padding-left: 30px;
+		text-align: left;
+	}
+
+	.quiz-new__consult-social {
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.quiz-new {
+		padding: 60px 0;
+	}
+
+	.quiz-new__wrapper {
+		padding: 20px;
+	}
+
+	.quiz-step__title {
+		font-size: 18px;
+	}
+
+	.quiz-card__name,
+	.quiz-check__name {
+		font-size: 16px;
+	}
+
+	.quiz-progress {
+		flex: 0 1 100%;
+		max-width: 100%;
+	}
+}
+
+/* Чекбокс согласия в квизе — .form__agree, но на светлом фоне (тёмный текст) */
+#quiz .form__agree-text,
+#quiz .form__agree-text a {
+	color: var(--dark-color);
+}
+
+/* Форма на светлом фоне — общий модификатор (тёмный текст) */
+.form--light .form__field,
+.form--light .form__file-name,
+.form--light .form__agree-text {
+	color: var(--dark-color);
+}
+
+.form--light .form__field::placeholder {
+	color: var(--dark-color);
+	opacity: 1;
+}
+
+.form--light .form__agree-text a {
+	color: var(--dark-color);
+	text-decoration: underline;
+}
+
+/* ==========================================================================
+   КАК МЫ РАБОТАЕМ
+   ========================================================================== */
+.howto {
+	padding: 30px 0;
+}
+
+.howto .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.howto-step {
+	margin-bottom: 40px;
+}
+
+.howto-step__head {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.howto-step__num {
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 1;
+	color: #d7d7d7;
+}
+
+.howto-step__icon {
+	width: 60px;
+	height: auto;
+}
+
+.howto-step__title {
+	margin: 0 0 8px;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--dark-color);
+	text-align: left;
+	text-transform: none;
+	letter-spacing: normal;
+	line-height: 1.2;
+}
+
+.howto-step__text {
+	margin: 0;
+	font-family: var(--third-family);
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: var(--dark-color);
+}
+
+/* ==========================================================================
+   FAQ / ЧАСТЫЕ ВОПРОСЫ
+   ========================================================================== */
+.faq {
+	padding: 30px 0;
+}
+
+.faq .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.faq__img {
+	width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-medium);
+}
+
+.faq .accordion {
+	margin-bottom: 60px;
+}
+
+.faq .accordion-item {
+	margin-bottom: 16px;
+	border: 1px solid #d7d7d7;
+	border-radius: var(--border-radius-small);
+	background: #f8f9fa;
+	overflow: hidden;
+}
+
+.faq .accordion-button {
+	min-height: 64px;
+	padding: 13px 15px;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--dark-color);
+	background: #f8f9fa;
+	box-shadow: none;
+}
+
+.faq .accordion-button:not(.collapsed) {
+	color: var(--dark-color);
+	background: #f8f9fa;
+	box-shadow: none;
+}
+
+.faq .accordion-button:focus {
+	box-shadow: none;
+	border-color: #d7d7d7;
+}
+
+.faq .accordion-button::after {
+	background-image: url('../img/ico/advantage/accordion-arrow.svg');
+	background-size: 1rem;
+}
+
+.faq .accordion-body {
+	padding: 0 15px 16px;
+	background: #f8f9fa;
+	font-family: var(--third-family);
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 135%;
+	color: var(--dark-color);
+}
+
+/* ==========================================================================
+   ПОДВАЛ
+   ========================================================================== */
+.footer {
+	position: relative;
+	z-index: 2;
+	margin-top: -50px;
+	background: #1b1733 url('../img/ico/advantage/footer-section.jpg') center / cover no-repeat;
+	color: var(--light-color);
+	border-radius: 50px 50px 0 0;
+	padding-top: 60px;
+	overflow: hidden;
+}
+
+.footer>* {
+	position: relative;
+	z-index: 1;
+}
+
+.footer .row {
+	--bs-gutter-y: 30px;
+}
+
+.footer__logo {
+	display: inline-block;
+	line-height: 0;
+	margin-bottom: 20px;
+}
+
+.footer__logo img {
+	display: block;
+}
+
+.footer__contacts,
+.footer__col4-contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.footer__contact {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--light-color);
+	text-decoration: none;
+	font-family: var(--font-family);
+	font-size: 16px;
+	line-height: 1.3;
+	transition: color .2s;
+}
+
+.footer__contact:hover {
+	color: #fff;
+}
+
+.footer__contact-ico {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	color: var(--corporate-color-1-text);
+}
+
+.footer__contact-ico img {
+	display: block;
+}
+
+.footer__menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.footer__menu>li {
+	line-height: normal;
+}
+
+/* Футерные стили — только верхний уровень (пункт-ссылка и dropdown-toggle).
+   Вложенные .dropdown-item не трогаем — они должны быть 1:1 как в шапке. */
+.footer__menu>li>a {
+	color: var(--light-color);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: var(--font-family);
+	font-size: 15px;
+	transition: color .2s;
+}
+
+.footer__menu>li>a:hover,
+.footer__menu>li>a.is-active {
+	color: var(--corporate-color-1-text);
+}
+
+/* Декоративные точки-разделители (menu-decoration-point) — в подвале не нужны */
+.footer__menu li.d-xl-inline {
+	display: none !important;
+}
+
+/* Вложенные пункты — Bootstrap-дропдаун (как в шапке) */
+/* Верх и низ выпадающего меню одинаковые (равный паддинг, без внешнего отступа) */
+.header-nav-bottom .dropdown-menu,
+.footer__menu .dropdown-menu {
+	margin: 0;
+	padding: 8px 0;
+}
+
+/* line-height у пунктов подвала — как в шапке (не normal от .footer__menu) */
+.footer__menu .dropdown-item {
+	line-height: var(--bs-body-line-height);
+}
+
+
+.footer__social {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.footer__social a {
+	display: inline-flex;
+	line-height: 0;
+	transition: opacity .2s;
+}
+
+.footer__social a:hover {
+	opacity: .8;
+}
+
+.footer__social img {
+	display: block;
+}
+
+.footer__line {
+	width: 100%;
+	height: 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	margin-top: 40px;
+}
+
+.footer #footer__new {
+	padding: 20px 0;
+	line-height: normal;
+}
+
+.footer__new__copy {
+	margin: 0;
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 16px;
+	text-align: center;
+	color: var(--white-color);
+	margin-bottom: 5px;
+}
+
+.footer__new__dev {
+	margin: 0;
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
+	color: var(--white-color);
+}
+
+.footer__new__dev a {
+	color: var(--white-color);
+	text-decoration: none;
+}
+
+.footer__new__dev a span {
+	color: #dc3545;
+}
+
+/* ==========================================================================
+   АДАПТИВ
+   ========================================================================== */
+@media (max-width: 1199.98px) {
+	.topbar {
+		gap: 40px;
+	}
+
+	.topbar__info {
+		gap: 24px;
+	}
+}
+
+@media (max-width: 991.98px) {
+
+	.form__agree-text {
+		text-align: left;
+	}
+
+	.lead__subtitle {
+		font-size: 18px;
+	}
+
+	/* Скрываем десктоп-шапку — её место занимает #sliding-header */
+	.hero__header {
+		display: none;
+	}
+
+	/* Неактуальные ниже 992 стили темы для меню нейтрализуем */
+	.header-nav-bottom .navbar-nav {
+		justify-content: flex-start;
+		gap: 0;
+	}
+
+	.topbar {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px 24px;
+	}
+
+	/* HERO */
+	.hero__content {
+		padding: 90px 0;
+	}
+
+	.hero__left h1 {
+		margin: 0 0 30px;
+	}
+
+	.hero__check {
+		padding-left: 0;
+	}
+
+	.hero__list li {
+		padding-top: 10px;
+	}
+
+	.hero__form {
+		margin: 30px auto 0;
+	}
+
+	/* Заголовки секций */
+	.section-title-wrapper {
+		margin-bottom: 60px;
+	}
+
+	.form__title {
+		font-size: 24px;
+	}
+
+	.section-title-wrapper h2.section-title {
+		font-size: 24px;
+	}
+
+	/* Отзывы: блок Яндекса — отступы по 60px, без паддинга */
+	.reviews__yandex {
+		margin: 60px 0;
+		padding: 0 !important;
+	}
+
+	.about {
+		padding-top: 60px;
+	}
+
+	/* О фабрике: картинка с отступом сверху от текста */
+	.about__img {
+		margin-top: 60px;
+	}
+
+	.quiz-step__foot {
+		justify-content: center;
+	}
+
+	.works {
+		padding-bottom: 80px;
+	}
+
+	/* ЛИД: наезд + скругление; порядок — форма, потом фото */
+	.lead {
+		position: relative;
+		z-index: 2;
+		margin-top: -60px;
+		padding: 60px 0 0 0;
+		border-radius: 50px 50px 0 0;
+	}
+
+	.lead.lead-2 {
+		margin-top: 0;
+		padding: 30px 0 0 0;
+	}
+
+	.lead__photo {
+		display: none;
+	}
+
+	.lead__title,
+	.lead__subtitle {
+		text-align: center;
+	}
+
+	.lead__photo-mobile {
+		margin: 60px auto 0;
+		display: block;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	/* ЛИД-форма: контент по центру */
+	.lead__form {
+		padding: 0;
+		text-align: center;
+	}
+
+	.lead__points {
+		margin: 0 auto 60px;
+	}
+
+	.lead__form .form__field {
+		text-align: left;
+	}
+
+	.social a img {
+		margin-bottom: 0;
+	}
+
+	#quiz .quiz-question-wrapper {
+		padding-top: 40px !important;
+		padding-bottom: 40px !important;
+	}
+
+	.lead__form .form__file {
+		flex-direction: row-reverse;
+	}
+
+	.lead__form .form__agree {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.lead__social {
+		justify-content: center;
+	}
+
+	.lead__form .form__submit {
+		width: 100%;
+	}
+
+	.footer__col4-contact {
+		margin-top: 16px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.hero__left h1 {
+		font-size: 24px;
+	}
+
+	.hero__text {
+		font-size: 17px;
+	}
+
+	.form__names {
+		flex-direction: column;
+	}
+
+	.form__subtitle {
+		font-size: 16px;
+	}
+}
+
+.btn-grad.quiz-nav-next,
+.btn-grad.quiz-nav-submit {
+	padding-inline: 30px;
+}
