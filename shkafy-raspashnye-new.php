@@ -304,7 +304,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
      ЛИД-ФОРМА
      ========================================================================== -->
 <section class="lead bg">
-	<img class="lead__photo" src="<?php echo $theme_uri; ?>/img/ico/advantage/lead__photo-2.jpg" alt="" />
+	<img class="lead__photo" src="<?php echo $theme_uri; ?>/img/ico/advantage/shkafy-raspashnye-lead__photo-2.jpg" alt="" />
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-4 offset-lg-1">
@@ -346,7 +346,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 			</div>
 		</div>
 	</div>
-	<img class="lead__photo-mobile" src="<?php echo $theme_uri; ?>/img/ico/advantage/lead__photo-mobile-2.jpg" alt="" />
+	<img class="lead__photo-mobile" src="<?php echo $theme_uri; ?>/img/ico/advantage/shkafy-raspashnye-lead__photo-mobile-2.jpg" alt="" />
 </section>
 
 <!-- ==========================================================================
@@ -718,7 +718,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 				</div>
 			</div>
 			<div class="col-12 col-lg-6 text-center">
-				<img class="faq__img" src="<?php echo $theme_uri; ?>/img/ico/advantage/faq__img.jpg" alt="Частые вопросы" />
+				<img class="faq__img" src="<?php echo $theme_uri; ?>/img/ico/advantage/faq__img-shkafy-raspashnye.jpg" alt="Частые вопросы" />
 			</div>
 		</div>
 	</div>
@@ -728,7 +728,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
      ФОРМА: «Уже есть проект от другого производителя?»
      ========================================================================== -->
 <section class="lead lead-2 bg">
-	<img class="lead__photo" src="<?php echo $theme_uri; ?>/img/ico/advantage/lead__photo-1.jpg" alt="" />
+	<img class="lead__photo" src="<?php echo $theme_uri; ?>/img/ico/advantage/shkafy-raspashnye-lead__photo-1.jpg" alt="" />
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-4 offset-lg-1">
@@ -769,7 +769,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 			</div>
 		</div>
 	</div>
-	<img class="lead__photo-mobile" src="<?php echo $theme_uri; ?>/img/ico/advantage/lead__photo-mobile-1.jpg" alt="" />
+	<img class="lead__photo-mobile" src="<?php echo $theme_uri; ?>/img/ico/advantage/shkafy-raspashnye-lead__photo-mobile-1.jpg" alt="" />
 </section>
 
 

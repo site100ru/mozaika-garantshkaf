@@ -718,7 +718,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-dveri-cupe.jpg'; ?>
 				</div>
 			</div>
 			<div class="col-12 col-lg-6 text-center">
-				<img class="faq__img" src="<?php echo $theme_uri; ?>/img/ico/advantage/faq__img.jpg" alt="Частые вопросы" />
+				<img class="faq__img" src="<?php echo $theme_uri; ?>/img/ico/advantage/faq__img-dveri-kupe.jpg" alt="Частые вопросы" />
 			</div>
 		</div>
 	</div>

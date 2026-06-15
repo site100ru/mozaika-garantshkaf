@@ -12,10 +12,13 @@ include 'header.php';
 
 <?php $theme_uri = get_stylesheet_directory_uri(); ?>
 
+<?php // Фоновое изображение hero для этой страницы (положите файл в img/ico/advantage/)
+$hero_bg = $theme_uri . '/img/ico/advantage/new-main.jpg'; ?>
+
 <!-- ==========================================================================
      HERO — верхняя плашка, меню и контент над фоном
      ========================================================================== -->
-<section class="hero">
+<section class="hero" style="background-image: url('<?php echo $hero_bg; ?>');">
 
 	<!-- Шапка: плашка + линия + меню (скрывается ≤992px, на их месте — sliding-header) -->
 	<div class="hero__header">
