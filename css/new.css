@@ -334,6 +334,12 @@
 	gap: 16px;
 }
 
+/* Меню шапки на белом фоне (Header 2 старого дизайна) — шрифт как на новой странице (Gilroy-Medium) */
+#top-menu-2 .header-nav-bottom a.nav-link {
+	font-family: var(--third-family);
+	font-weight: 500;
+}
+
 /* --- Тонкая линия во всю ширину --- */
 .hero__line {
 	width: 100%;
@@ -697,6 +703,89 @@ textarea.form__field {
 }
 
 /* ==========================================================================
+   ПРИМЕРЫ НАШИХ РАБОТ — карточки категорий (.works-cat)
+   ========================================================================== */
+.works-cat {
+	padding: 60px 0;
+}
+
+.works-cat .section-title-wrapper {
+	margin-bottom: 60px;
+}
+
+.works-cat-card {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	border-radius: 25px;
+	aspect-ratio: 16 / 11;
+}
+
+.works-cat-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform .4s ease;
+}
+
+.works-cat-card::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .55) 100%);
+}
+
+.works-cat-card:hover img {
+	transform: scale(1.05);
+}
+
+.works-cat-card__title {
+	position: absolute;
+	left: 24px;
+	bottom: 20px;
+	z-index: 1;
+	color: var(--white-color);
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+/* Фильтр категорий в новом масонри портфолио (переключатели ВСЕ · ШКАФЫ-КУПЕ · …) */
+.archive-portfolio-section-2 .nav-scroller {
+	height: auto;
+	overflow: visible;
+	text-transform: uppercase;
+	font-family: var(--third-family);
+	font-weight: 500;
+}
+
+.archive-portfolio-section-2 .nav-scroller .nav {
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 0;
+	margin-top: 0;
+	overflow: visible;
+}
+
+.archive-portfolio-section-2 .nav-item a {
+	color: #000000;
+	opacity: 0.75;
+	font-size: 14px;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.archive-portfolio-section-2 .nav-item a:hover {
+	color: #ffe600;
+}
+
+.archive-portfolio-section-2 .nav-item a.active {
+	color: #00a3d3;
+}
+
+/* ==========================================================================
    ЛИД-ФОРМА (секция с фото: бело-слева / контент-справа)
    ========================================================================== */
 .lead {
@@ -928,7 +1017,7 @@ textarea.form__field {
    КВИЗ (новый шаблон template-parts/quiz-new) — чистая разметка
    ============================================================ */
 .quiz-new {
-	padding: 80px 0;
+	padding: 30px 0;
 }
 
 .quiz-new__subtitle {
@@ -1325,6 +1414,11 @@ textarea.form__field {
 	border-radius: 50px 50px 0 0;
 	padding-top: 60px;
 	overflow: hidden;
+}
+
+/* Подвал без «наезда» на предыдущую секцию (страница калькулятора) */
+.footer.footer--no-offset {
+	margin-top: 0;
 }
 
 .footer>* {

@@ -19,6 +19,7 @@ $section_title = isset($args['section_title']) ? $args['section_title'] : 'На�
 $posts_count  = isset($args['posts_count']) ? $args['posts_count'] : 18;
 $show_button  = isset($args['show_button']) ? $args['show_button'] : true;
 $button_text  = isset($args['button_text']) ? $args['button_text'] : 'Смотреть все';
+$show_filter  = isset($args['show_filter']) ? $args['show_filter'] : false;
 
 $category_term_id = '';
 $button_link = '/portfolio/';
@@ -43,6 +44,40 @@ $theme_uri = get_stylesheet_directory_uri();
 				<img src="<?php echo $theme_uri; ?>/img/ico/advantage/title-decoration.svg" alt="" class="img-fluid" />
 			</div>
 		</div>
+
+		<?php if ($show_filter) : ?>
+		<div class="row">
+			<div class="col text-center mb-4 mb-lg-5">
+				<div class="nav-scroller mb-0">
+					<ul class="nav justify-content-lg-center d-flex m-auto align-items-center tablist scroller" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link <?php echo ($category == 'all' || empty($category)) ? 'active' : ''; ?>" href="/portfolio/">Все</a>
+						</li>
+						<?php
+						$filter_terms = get_terms([
+							'taxonomy' => ['portfolio-cat'],
+							'orderby'  => 'slug',
+							'order'    => 'ASC',
+						]);
+						foreach ($filter_terms as $filter_term) { ?>
+						<li class="nav-item">
+							<span class="nav-link px-0">
+								<svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="svg-icon">
+									<rect width="6" height="6" rx="2" />
+								</svg>
+							</span>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link <?php echo ($category == $filter_term->slug) ? 'active' : ''; ?>" href="<?php echo get_term_link($filter_term->term_id); ?>">
+								<?php echo $filter_term->name; ?>
+							</a>
+						</li>
+						<?php } ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<?php endif; ?>
 
 		<div class="row" style="position: relative;">
 			<?php
@@ -74,14 +109,11 @@ $theme_uri = get_stylesheet_directory_uri();
 						<img src="<?php echo esc_url($first_img); ?>" class="work-card__img" alt="<?php the_title_attribute(); ?>" loading="lazy" />
 						<span class="work-card__title"><?php the_title(); ?></span>
 						<?php if ($price) : ?>
-							<span class="work-card__price">от <?php echo esc_html($price); ?></span>
+						<span class="work-card__price">от <?php echo esc_html($price); ?></span>
 						<?php endif; ?>
 					</div>
-					<p class="work-card__text">Рассчитаем точную стоимость этого шкафа по вашим размерам.</p>
-					<button type="button" class="btn-grad-outline work-card__btn" data-bs-toggle="modal"
-						data-bs-target="#calculatePriceWithoutDownloadModal"
-						data-title="<?php the_title_attribute(); ?>"
-						data-category="<?php echo esc_attr($section_title); ?>">Рассчитать</button>
+					<p class="work-card__text">Рассчитаем точную стоимость этого проекта по вашим размерам.</p>
+					<button type="button" class="btn-grad-outline work-card__btn" data-bs-toggle="modal" data-bs-target="#calculatePriceWithoutDownloadModal" data-title="<?php the_title_attribute(); ?>" data-category="<?php echo esc_attr($section_title); ?>">Рассчитать</button>
 				</div>
 			</div>
 			<?php
