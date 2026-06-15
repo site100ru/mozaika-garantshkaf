@@ -366,7 +366,7 @@ include 'header.php';
     'category' => '021-шкафы-купе',
     'section_title' => 'Наши последние работы и цены',
     'section_description' => '',
-    'posts_count' => 18,
+    'posts_count' => 30,
     'card_type' => 'zoom-card',
     'show_button' => true,
     'button_text' => 'Смотреть все',

@@ -295,7 +295,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-dveri-cupe.jpg'; ?>
 <?php get_template_part('template-parts/portfolio-masonry-new/portfolio-masonry-new', null, [
 	'category'      => '022-двери-купе',
 	'section_title' => 'Некоторые наши работы',
-	'posts_count'   => 18,
+	'posts_count'   => 30,
 	'show_button'   => true,
 	'button_text'   => 'Смотреть все',
 ]); ?>
