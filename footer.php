@@ -339,6 +339,9 @@
 <script>
 	grecaptcha.ready(function () {
 		grecaptcha.execute('6LdV1IcUAAAAADRQAhpGL8dVj5_t0nZDPh9m_0tn', { action: 'action_name' }).then(function (token) {
+			// Заполняем токеном ВСЕ поля reCAPTCHA на странице (все формы, текущие и будущие)
+			document.querySelectorAll('input[name="g-recaptcha-response"]').forEach(function (el) { el.value = token; });
+
 			// В боке Home
 			if (document.getElementById('g-recaptcha-response-order-1-home')) {
 				document.getElementById('g-recaptcha-response-order-1-home').value = token;
