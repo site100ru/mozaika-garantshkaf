@@ -26,7 +26,7 @@
 			$headers .= "Content-type: text/html; charset=utf-8\r\n";
 
 			//garantshkaf@mail.ru, vasilyev-r@mail.ru
-			mail( "sidorov-vv3@mail.ru, vasilyev-r@mail.ru", "Расчёт стоимости с сайта garantshkaf.ru.", 
+			mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Расчёт стоимости с сайта garantshkaf.ru.", 
 				"Объект: " . $product . "\n" .
 				"Потенциальный клиент: " . $name . "\n" .
 				"Телефон: " . $tel . "\n" .

@@ -28,7 +28,7 @@
 			$headers .= "Content-type: text/html; charset=utf-8\r\n";
 			
 			//garantshkaf@mail.ru, vasilyev-r@mail.ru
-			mail( "sidorov-vv3@mail.ru, vasilyev-r@mail.ru", "Заказ обратного звонка с сайта garantshkaf.ru.", "Потенциальный клиент ".$name." просит перезвонить Вас на номер " . $tel, $headers );
+			mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Заказ обратного звонка с сайта garantshkaf.ru.", "Потенциальный клиент ".$name." просит перезвонить Вас на номер " . $tel, $headers );
 			
 			$_SESSION['win'] = 1;
 			$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в компанию «ГАРАНТШКАФ». Мы ответим Вам в&#160;ближайшее время.</p>';

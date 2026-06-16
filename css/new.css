@@ -1826,3 +1826,7 @@ h1.portfolio-title {
 	padding-bottom: 0;
 	margin-bottom: 2px;
 }
+
+#callback-measurer {
+	z-index: 999999999;
+}
