@@ -146,7 +146,7 @@ function gsh_portfolio_cat_name() {
 	return $name;
 }
 
-function garant_echo_description_title() {
+function garant_echo_title() {
 	$site = get_bloginfo('name'); // Название сайта из «Настройки → Общие»
 	if ( is_post_type_archive('portfolio') ) {
 		return 'Наши работы — ' . $site;
@@ -160,7 +160,7 @@ function garant_echo_description_title() {
 	return '';
 }
 
-function echo_description() {
+function garant_echo_description() {
 	$site = get_bloginfo('name'); // Название сайта из «Настройки → Общие»
 	if ( is_tax('portfolio-cat') ) {
 		$desc = wp_strip_all_tags( term_description() );
