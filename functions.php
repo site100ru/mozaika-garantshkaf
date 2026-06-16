@@ -146,7 +146,7 @@ function gsh_portfolio_cat_name() {
 	return $name;
 }
 
-function echo_title() {
+function garant_echo_description_title() {
 	$site = get_bloginfo('name'); // Название сайта из «Настройки → Общие»
 	if ( is_post_type_archive('portfolio') ) {
 		return 'Наши работы — ' . $site;
