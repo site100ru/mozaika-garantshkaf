@@ -167,7 +167,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 								<input type="text" name="name" class="form__field" placeholder="Ваше имя" />
 								<input type="text" name="tel" id="phone_mask_3" class="form__field telMask" placeholder="Ваш телефон" required />
 							</div>
-							<textarea rows="3" name="mes" class="form__field" placeholder="Опишите шкаф своими словами, укажите примерные размеры и материалы"></textarea>
+							<textarea rows="3" name="mes" class="form__field" placeholder="Опишите распашной шкаф своими словами, укажите примерные размеры и материалы"></textarea>
 							<div class="form__file">
 								<label class="btn-grad-outline form__file-label" for="scFile">Прикрепить файл</label>
 								<input type="file" name="file[]" class="form__file-input" id="scFile" accept=".jpg,.jpeg,.png,.pdf,.heic" multiple onchange="document.getElementById('scFileName').textContent = this.files.length ? (this.files.length === 1 ? this.files[0].name : this.files.length + ' файла(ов)') : 'Файл не выбран';" />
@@ -309,15 +309,15 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 		<div class="row">
 			<div class="col-12 col-lg-4 offset-lg-1">
 				<div class="lead__form form--light section-title-wrapper">
-					<h2 class="section-title">Рассчитаем стоимость шкафа за&nbsp;15&nbsp;минут!</h2>
-					<p class="lead__subtitle">Опишите шкаф своими словами. При возможности прикрепите изображение</p>
+					<h2 class="section-title">Рассчитаем стоимость распашного шкафа за&nbsp;15&nbsp;минут!</h2>
+					<p class="lead__subtitle">Опишите распашной шкаф своими словами. При возможности прикрепите изображение</p>
 					<img class="lead__points" src="<?php echo $theme_uri; ?>/img/ico/advantage/title-decoration.svg" alt="" />
 					<form method="post" action="<?php echo $theme_uri; ?>/mails/get_calculate.php" enctype="multipart/form-data">
 						<div class="form__names d-flex gap-4">
 							<input type="text" name="name" class="form__field" placeholder="Ваше имя" />
 							<input type="text" name="tel" id="lead_phone_mask" class="form__field telMask" placeholder="Ваш телефон" required />
 						</div>
-						<textarea rows="3" name="mes" class="form__field" placeholder="Опишите шкаф своими словами, укажите примерные размеры и материалы"></textarea>
+						<textarea rows="3" name="mes" class="form__field" placeholder="Опишите распашной шкаф своими словами, укажите примерные размеры и материалы"></textarea>
 						<div class="form__file">
 							<span class="form__file-name" id="leadFileName">Файл не выбран</span>
 							<label class="btn-grad-outline form__file-label" for="leadFile">Прикрепить файл</label>
@@ -484,7 +484,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 					<i class="star-filled"><img src="<?php echo $theme_uri; ?>/img/ico/star.svg" alt=""></i>
 					<i class="star-filled"><img src="<?php echo $theme_uri; ?>/img/ico/star.svg" alt=""></i>
 				</div>
-				<p class="mb-0" style="font-size: 18px; line-height: 1;">4,6 из 5</p>
+				<p class="mb-0" style="font-size: 18px; line-height: 1;">4,9 из 5</p>
 			</div>
 		</div>
 
@@ -610,7 +610,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 						<img class="howto-step__icon" src="<?php echo $theme_uri; ?>/img/ico/advantage/step-1.svg" alt="" />
 					</div>
 					<h3 class="howto-step__title">Первичный контакт</h3>
-					<p class="howto-step__text">Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта, наброска, размеров или другой информации — высылайте нам на почту, в Telegram, WhatsApp или в форме обратной связи.</p>
+					<p class="howto-step__text">Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта, изображения, рисунка, размеров или другой информации — пришлите нам на почту, в Max, Telegram, WhatsApp или в форме обратной связи.</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3">
@@ -630,7 +630,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 						<img class="howto-step__icon" src="<?php echo $theme_uri; ?>/img/ico/advantage/step-3.svg" alt="" />
 					</div>
 					<h3 class="howto-step__title">Заключение договора</h3>
-					<p class="howto-step__text">Если Вас всё устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы, заключаем договор. Вы вносите предоплату, и шкаф поступает в производство.</p>
+					<p class="howto-step__text">Если Вас всё устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы, заключаем договор. Только здесь Вы вносите предоплату 30%, и распашной шкаф поступает в производство.</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3">
@@ -640,7 +640,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 						<img class="howto-step__icon" src="<?php echo $theme_uri; ?>/img/ico/advantage/step-4.svg" alt="" />
 					</div>
 					<h3 class="howto-step__title">Доставка и установка</h3>
-					<p class="howto-step__text">После окончания производства доставляем и устанавливаем шкаф в заранее оговорённые дату и время. После установки производим окончательные расчёты.</p>
+					<p class="howto-step__text">После окончания производства доставляем и устанавливаем распашной шкаф в заранее оговорённые дату и время. После установки производим окончательные расчёты. Убираем весь мусор.</p>
 				</div>
 			</div>
 		</div>
@@ -672,7 +672,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2" aria-expanded="false" aria-controls="faqC2">Насколько надёжная Ваша компания?</button>
 						</h4>
 						<div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2" data-bs-parent="#faqAccordion">
-							<div class="accordion-body">Мы делаем распашные шкафы и другую корпусную мебель с 2011 года. Имеем собственное производство, которое Вы можете посетить, чтобы убедиться, что мы сами изготавливаем все шкафы.</div>
+							<div class="accordion-body">Мы делаем распашные шкафы и другую корпусную мебель с 2011 года. Имеем собственное производство, которое Вы можете посетить, чтобы убедиться, что мы сами изготавливаем все шкафы, а не поручаем это другим, а с вас берём дополнительную наценку.</div>
 						</div>
 					</div>
 					<div class="accordion-item">

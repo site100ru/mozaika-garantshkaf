@@ -389,7 +389,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 						<p class="why-card__text">Это позволяет нам:
 							<br>- держать конкурентные цены;
 							<br>- контролировать качество продукции;
-							<br>- контролировать сроки производства и установки шкафов.
+							<br>- контролировать сроки производства и установки мебели.
 						</p>
 					</div>
 				</div>
@@ -484,7 +484,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 					<i class="star-filled"><img src="<?php echo $theme_uri; ?>/img/ico/star.svg" alt=""></i>
 					<i class="star-filled"><img src="<?php echo $theme_uri; ?>/img/ico/star.svg" alt=""></i>
 				</div>
-				<p class="mb-0" style="font-size: 18px; line-height: 1;">4,6 из 5</p>
+				<p class="mb-0" style="font-size: 18px; line-height: 1;">4,9 из 5</p>
 			</div>
 		</div>
 
@@ -610,7 +610,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 						<img class="howto-step__icon" src="<?php echo $theme_uri; ?>/img/ico/advantage/step-1.svg" alt="" />
 					</div>
 					<h3 class="howto-step__title">Первичный контакт</h3>
-					<p class="howto-step__text">Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта, наброска, размеров или другой информации — высылайте нам на почту, в Telegram, WhatsApp или в форме обратной связи.</p>
+					<p class="howto-step__text">Свяжитесь с нами любым удобным способом, расскажите, что Вы хотите. При наличии дизайн-проекта, изображения, рисунка, размеров или другой информации — пришлите нам на почту, в Max, Telegram, WhatsApp или в форме обратной связи.</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3">
@@ -630,7 +630,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 						<img class="howto-step__icon" src="<?php echo $theme_uri; ?>/img/ico/advantage/step-3.svg" alt="" />
 					</div>
 					<h3 class="howto-step__title">Заключение договора</h3>
-					<p class="howto-step__text">Если Вас всё устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы, заключаем договор. Вы вносите предоплату, и шкаф поступает в производство.</p>
+					<p class="howto-step__text">Если Вас всё устраивает, мы приезжаем к Вам на замер, утверждаем сроки, материалы, заключаем договор. Только здесь Вы вносите предоплату 30%, и рабочая зона поступает в производство.</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3">
@@ -640,7 +640,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 						<img class="howto-step__icon" src="<?php echo $theme_uri; ?>/img/ico/advantage/step-4.svg" alt="" />
 					</div>
 					<h3 class="howto-step__title">Доставка и установка</h3>
-					<p class="howto-step__text">После окончания производства доставляем и устанавливаем шкаф в заранее оговорённые дату и время. После установки производим окончательные расчёты.</p>
+					<p class="howto-step__text">После окончания производства доставляем и устанавливаем рабочую зону в заранее оговорённые дату и время. После установки производим окончательные расчёты. Убираем весь мусор.</p>
 				</div>
 			</div>
 		</div>
@@ -672,7 +672,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2" aria-expanded="false" aria-controls="faqC2">Насколько надёжная Ваша компания?</button>
 						</h4>
 						<div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2" data-bs-parent="#faqAccordion">
-							<div class="accordion-body">Мы делаем рабочие зоны и другую корпусную мебель с 2011 года. Имеем собственное производство, которое Вы можете посетить, чтобы убедиться, что мы сами изготавливаем всю мебель.</div>
+							<div class="accordion-body">Мы делаем рабочие зоны и другую корпусную мебель с 2011 года. Имеем собственное производство, которое Вы можете посетить, чтобы убедиться, что мы сами изготавливаем всю мебель, а не поручаем это другим, а с вас берём дополнительную наценку.</div>
 						</div>
 					</div>
 					<div class="accordion-item">
@@ -680,7 +680,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-rabochie-zony.jpg'; ?>
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC3" aria-expanded="false" aria-controls="faqC3">Как выбрать наполнение и дизайн рабочей зоны?</button>
 						</h4>
 						<div id="faqC3" class="accordion-collapse collapse" aria-labelledby="faqH3" data-bs-parent="#faqAccordion">
-							<div class="accordion-body">Наши замерщики помогут Вам с выбором материалов и наполнения шкафа с учётом Ваших пожеланий и конструктивных возможностей помещения.</div>
+							<div class="accordion-body">Наши замерщики помогут Вам с выбором материалов и наполнения рабочей зоны с учётом Ваших пожеланий и конструктивных возможностей помещения.</div>
 						</div>
 					</div>
 					<div class="accordion-item">
