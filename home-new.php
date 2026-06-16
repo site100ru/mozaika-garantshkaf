@@ -99,7 +99,7 @@
 		<!-- Required meta tags --->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta property="og:title" content="<?php echo get_bloginfo('name'); ?> - <?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
+		<meta property="og:title" content="<?php echo get_bloginfo('name'); ?> — <?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
 		<meta name="description" content="<?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
 		<meta property="og:description" content="<?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
 
@@ -114,7 +114,7 @@
 
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-light-1.svg" type="image/x-icon" id="favicon">
 
-		<title><?php echo get_bloginfo('name'); ?> - <?php echo get_bloginfo('description'); ?><?php echo $location; ?></title>
+		<title><?php echo get_bloginfo('name'); ?> — <?php echo get_bloginfo('description'); ?><?php echo $location; ?></title>
 
 		<?php if ( $counter_head = get_theme_mod( 'mytheme_counter_head' ) ) : ?>
 			<!-- Код счетчика (head) -->
@@ -922,7 +922,7 @@
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer">
+<footer class="footer" id="sp-contacts">
 	<div class="container">
 		<div class="row">
 

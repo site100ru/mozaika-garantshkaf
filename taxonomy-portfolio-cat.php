@@ -252,7 +252,7 @@ $current_name = $current_term->name ?? 'Наши работы';
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer">
+<footer class="footer" id="sp-contacts">
 	<div class="container">
 		<div class="row">
 

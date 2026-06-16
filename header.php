@@ -90,7 +90,7 @@
 <?php
 // SEO title/description: спец-страницы (портфолио) — через gsh_*; иначе прежнее поведение
 $head_title = garant_echo_title();
-if ( $head_title === '' ) { $head_title = get_the_title() . ' на&nbsp;заказ от&nbsp;производителя' . $location; }
+if ( $head_title === '' ) { $head_title = get_the_title() . ' — ' . get_bloginfo('name') . $location; } // «Название страницы — Название сайта {локация}»
 $head_desc = garant_echo_description();
 if ( $head_desc === '' ) { $head_desc = get_the_title() . ' на&nbsp;заказ от&nbsp;производителя' . $location; }
 ?>

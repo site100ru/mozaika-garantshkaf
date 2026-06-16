@@ -394,7 +394,7 @@ include 'header.php';
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer">
+<footer class="footer" id="sp-contacts">
 	<div class="container">
 		<div class="row">
 

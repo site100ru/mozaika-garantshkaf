@@ -776,7 +776,7 @@ $hero_bg = $theme_uri . '/img/ico/advantage/hero-shkafy-raspashnye.jpg'; ?>
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer">
+<footer class="footer" id="sp-contacts">
 	<div class="container">
 		<div class="row">
 

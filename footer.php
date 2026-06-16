@@ -46,7 +46,7 @@
 <!-- /Рассчитать стоимость без загрузки изображения -->
 
 <!-- Callback button HTML -->
-<div class="callback-button-wrapper">
+<div class="callback-button-wrapper" id="sp-contacts">
 	<div id="callbackBtn" class="callback-button" onclick="callbackButtonClick();">
 		<div id="btnIco" class="callback-button-ico"></div>
 	</div>
@@ -392,6 +392,25 @@
 <!-- Код счетчика (body) -->
 <?php echo $counter_body; ?>
 <?php endif; ?>
+
+
+<!-- Якорные ссылки #sp-*: отступ под фикс-шапку + переход на главную, если блока нет на странице -->
+<style>
+	[id^="sp-"] { scroll-margin-top: 100px; }
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var home = '<?php echo esc_url( home_url('/') ); ?>';
+		document.querySelectorAll('a[href*="#sp-"]').forEach(function (a) {
+			var hash = a.hash;
+			if (!hash) return;
+			// если блока с таким id нет на текущей странице — ведём на главную с этим якорем
+			if (!document.getElementById(hash.slice(1))) {
+				a.setAttribute('href', home + hash);
+			}
+		});
+	});
+</script>
 
 
 </body>
