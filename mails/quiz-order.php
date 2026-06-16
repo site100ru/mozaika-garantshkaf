@@ -31,7 +31,7 @@
 
 	/* Send mails */
 	//garantshkaf@mail.ru, vasilyev-r@mail.ru
-	mail( "sidorov-vv3@mail.ru, vasilyev-r@mail.ru", "Заявка на расчет шкафа с сайта garantshkaf.ru.", $mail, $headers );
+	mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Заявка на расчет шкафа с сайта garantshkaf.ru.", $mail, $headers );
 
 	$_SESSION['win'] = 1;
 	$_SESSION['recaptcha'] = '<p>Спасибо, что Вы обратились именно к нам. Мы свяжемся с Вами в ближайшее время.</p>';

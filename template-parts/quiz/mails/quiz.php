@@ -51,7 +51,7 @@ if ($_POST) {
     //garantshkaf@mail.ru, vasilyev-r@mail.ru
     // Если поле с телефоном заполнено
     mail(
-        "sidorov-vv3@mail.ru, vasilyev-r@mail.ru",
+        "garantshkaf@mail.ru, vasilyev-r@mail.ru",
         "Заявка с Квиза с сайта garantshkaf.ru",
         "
 			Имя: " . $name . "<br><br>
