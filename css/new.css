@@ -330,6 +330,13 @@
 	display: block;
 }
 
+/* Верхний бар на страницах портфолио (старая шапка, белый фон) — тёмный текст */
+.col-nav .topbar__item,
+.col-nav .topbar__item:hover,
+.col-nav .topbar__phone {
+	color: #212529;
+}
+
 .header-nav-bottom .navbar-nav {
 	gap: 16px;
 }
@@ -752,21 +759,17 @@ textarea.form__field {
 	line-height: 1.2;
 }
 
-/* Фильтр категорий в новом масонри портфолио (переключатели ВСЕ · ШКАФЫ-КУПЕ · …) */
+/* Фильтр категорий в новом масонри портфолио (переключатели ВСЕ · ШКАФЫ-КУПЕ · …).
+   Раскладку/скролл (на мобиле горизонтальный) берём из штатных .nav-scroller темы. */
 .archive-portfolio-section-2 .nav-scroller {
-	height: auto;
-	overflow: visible;
 	text-transform: uppercase;
 	font-family: var(--third-family);
 	font-weight: 500;
 }
 
-.archive-portfolio-section-2 .nav-scroller .nav {
-	flex-wrap: wrap;
-	justify-content: center;
-	padding-bottom: 0;
-	margin-top: 0;
-	overflow: visible;
+/* Иконка-«пальчик» — подсказка горизонтального скролла фильтра на мобиле */
+.archive-portfolio-section-2 .scroller-mobile svg {
+	fill: #fc4a1a;
 }
 
 .archive-portfolio-section-2 .nav-item a {

@@ -21,89 +21,40 @@ include 'header.php';
 <div id="sp-home"></div>
 <!-- Header 1 -->
 <div class="col-md-12 d-flex justify-content-end col-nav" style="background-color:#F5F5F5;">
-	<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block py-0">
-		<div class="container-fluid px-0">
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<nav class="header-nav-top navbar navbar-expand-lg navbar-light d-none d-lg-block">
-				<div class="container">
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ms-auto align-items-center top-navbar">
-							<li class="nav-item me-3">
-								<a class="nav-link text-dark" href="https://yandex.ru/maps/org/garantshkaf/43131278671/" target="_blank">
-									<div class="d-flex nav-link-inner">
-										<div class="nav-li-float-left">
-											<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/location-ico.svg" />
-										</div>
-										<div class="nav-li-float-right"><?php echo $address; ?></div>
-										<div style="clear: both"></div>
-									</div>
-								</a>
-							</li>
-							<li class="nav-item me-3">
-								<a class="nav-link text-dark" href="#">
-									<div class="d-flex nav-link-inner">
-										<div class="nav-li-float-left">
-											<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/clock-ico.svg" />
-										</div>
-										<div class="nav-li-float-right">
-											Пн - Вс <br />с 8:00 до 22:00
-										</div>
-										<div style="clear: both"></div>
-									</div>
-								</a>
-							</li>
-							<li class="nav-item me-3">
-								<a href="#" class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#callback">
-									<div class="d-flex nav-link-inner">
-										<div class="nav-li-float-left">
-											<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/callback-ico.svg" />
-										</div>
-										<div class="nav-li-float-right">
-											Обратный звонок
-										</div>
-										<div style="clear: both"></div>
-									</div>
-								</a>
-							</li>
-							<li class="nav-item me-4">
-								<a class="top-menu-tel nav-link text-dark" href="tel:89856445775">
-									<div class="d-flex nav-link-inner">
-										<div class="nav-li-float-left">
-											<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/mobile-phone-ico.svg" />
-										</div>
-										<div class="nav-li-float-right phone-number">
-											8 (985) 644-57-75
-										</div>
-										<div style="clear: both"></div>
-									</div>
-								</a>
-							</li>
-							<li class="nav-item me-2">
-								<a class="nav-link ico-button" href="https://t.me/+79856445775" target="_blank">
-									<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/telegram-ico.svg" />
-								</a>
-							</li>
-							<li class="nav-item me-2">
-								<a class="nav-link ico-button" href="https://wa.me/79856445775?web=1&amp;app_absent=1" target="_blank">
-									<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/whatsapp-ico.svg" />
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link ico-button" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="_blank">
-									<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/max-ico.svg" />
-								</a>
-							</li>
-						</ul>
-					</div>
+	<!-- Верхняя плашка (как на новой странице); скрыта на адаптиве (<992px) -->
+	<div class="container d-none d-lg-block">
+		<div class="topbar">
+			<div class="topbar__info">
+				<a class="topbar__item" href="https://yandex.ru/maps/org/garantshkaf/43131278671/" target="_blank">
+					<img src="<?php echo $theme_uri; ?>/img/ico/location-ico.svg" alt="" />
+					<span><?php echo explode(',', $address)[0]; ?></span>
+				</a>
+				<div class="topbar__item">
+					<img src="<?php echo $theme_uri; ?>/img/ico/clock-ico.svg" alt="" />
+					<span>Пн - Вс<br />с 8:00 до 22:00</span>
 				</div>
-			</nav>
+				<a class="topbar__item" href="#" data-bs-toggle="modal" data-bs-target="#callback">
+					<img src="<?php echo $theme_uri; ?>/img/ico/callback-ico.svg" alt="" />
+					<span>Обратный звонок</span>
+				</a>
+				<a class="topbar__item" href="tel:89856445775">
+					<img src="<?php echo $theme_uri; ?>/img/ico/mobile-phone-ico.svg" alt="" />
+					<span class="topbar__phone">8 (985) 644-57-75</span>
+				</a>
+			</div>
+			<div class="topbar__social">
+				<a href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="_blank" aria-label="Max">
+					<img src="<?php echo $theme_uri; ?>/img/ico/max-ico.svg" alt="Max" />
+				</a>
+				<a href="https://t.me/+79856445775" target="_blank" aria-label="Telegram">
+					<img src="<?php echo $theme_uri; ?>/img/ico/telegram-ico.svg" alt="Telegram" />
+				</a>
+				<a href="https://wa.me/79856445775?web=1&app_absent=1" target="_blank" aria-label="WhatsApp">
+					<img src="<?php echo $theme_uri; ?>/img/ico/whatsapp-ico.svg" alt="WhatsApp" />
+				</a>
+			</div>
 		</div>
-	</nav>
+	</div>
 	<header id="sliding-header" class="shadow">
 		<!-- Header nav bottom -->
 		<nav class="header-nav-bottom navbar navbar-expand-lg navbar-light py-1 py-lg-0">
@@ -176,7 +127,7 @@ include 'header.php';
 <!-- /Header 1 -->
 
 <!-- Header 2 -->
-<div class="col-md-12 bottom-nav d-none d-md-block navbar-light-light" style="border-top: 1px solid #E1E1E1;" id="top-menu-2">
+<div class="col-md-12 bottom-nav navbar-light-light d-none d-lg-block" style="border-top: 1px solid #E1E1E1;" id="top-menu-2">
 	<nav class="header-nav-bottom navbar navbar-expand-lg navbar-light header-bottom" style="background-color: #fff">
 		<div class="container bottom-container">
 			<a class="navbar-brand" href="#">

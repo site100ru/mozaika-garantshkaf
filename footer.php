@@ -325,7 +325,14 @@
 
 
 <!-- Menu -->
-<script>vyezjalo();</script>
+<!-- Белое меню (#top-menu-2) → prilipalo(); иначе → vyezjalo() -->
+<script>
+	if (document.getElementById('top-menu-2')) {
+		prilipalo();
+	} else {
+		vyezjalo();
+	}
+</script>
 
 
 <script src='https://www.google.com/recaptcha/api.js?render=6LdV1IcUAAAAADRQAhpGL8dVj5_t0nZDPh9m_0tn'></script>
