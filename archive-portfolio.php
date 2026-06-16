@@ -163,7 +163,7 @@ include 'header.php';
 <header id="archive-portfolio-header" class="home-section home-section-shafy-cupe woocommerce-products-header" style="background-position: center;">
 	<div class="container">
 		<div class="row align-items-center text-start">
-			<div class="col py-5">
+			<div class="col portfolio-page">
 				<h1 class="portfolio-title">Наши лучшие работы</h1>
 			</div>
 		</div>

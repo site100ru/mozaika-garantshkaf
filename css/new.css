@@ -1803,3 +1803,26 @@ h1.portfolio-title {
 		margin-bottom: 60px;
 	}
 }
+
+.nav-scroller {
+	height: auto;
+	padding-bottom: 60px;
+}
+
+.nav-scroller .nav {
+	padding-bottom: 0;
+}
+
+.portfolio-page {
+	padding-block: 60px;
+}
+
+.nav-scroller .nav .nav-link {
+	padding-block: 0;
+	line-height: normal;
+}
+
+.nav-scroller .nav .nav-item:has(span) {
+	padding-bottom: 0;
+	margin-bottom: 2px;
+}

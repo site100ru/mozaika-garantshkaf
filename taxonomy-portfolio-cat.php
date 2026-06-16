@@ -167,8 +167,8 @@ $current_name = $current_term->name ?? 'Наши работы';
 <header id="archive-portfolio-header" class="home-section home-section-shafy-cupe woocommerce-products-header" style="background-position: center;">
 	<div class="container">
 		<div class="row align-items-center text-start">
-			<div class="col py-5">
-				<h1 class="my-5"><?php echo esc_html($current_name); ?></h1>
+			<div class="col portfolio-page">
+				<h1 class="portfolio-title"><?php echo esc_html($current_name); ?></h1>
 			</div>
 		</div>
 	</div>

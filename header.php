@@ -87,6 +87,13 @@
 	 
 ?>
 
+<?php
+// SEO title/description: спец-страницы (портфолио) — через gsh_*; иначе прежнее поведение
+$head_title = echo_title();
+if ( $head_title === '' ) { $head_title = get_the_title() . ' на&nbsp;заказ от&nbsp;производителя' . $location; }
+$head_desc = echo_description();
+if ( $head_desc === '' ) { $head_desc = get_the_title() . ' на&nbsp;заказ от&nbsp;производителя' . $location; }
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -94,9 +101,9 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta property="og:title" content="<?php echo get_the_title(); ?> на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?>"/>
-		<meta name="description" content="<?php echo get_the_title(); ?> на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?>"/>
-		<meta property="og:description" content="<?php echo get_the_title(); ?> на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?>"/>
+		<meta property="og:title" content="<?php echo $head_title; ?>"/>
+		<meta name="description" content="<?php echo $head_desc; ?>"/>
+		<meta property="og:description" content="<?php echo $head_desc; ?>"/>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" />
@@ -117,7 +124,7 @@
 		<!-- Quiz CSS -->
 		<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/quiz.css" /> -->
 
-		<title><?php echo get_the_title(); ?> на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?></title>
+		<title><?php echo $head_title; ?></title>
 		
 		<?php if ( $counter_head = get_theme_mod( 'mytheme_counter_head' ) ) : ?>
 			<!-- Код счетчика (head) -->
