@@ -47,7 +47,7 @@ $theme_uri = get_stylesheet_directory_uri();
 
 		<?php if ($show_filter) : ?>
 		<div class="row">
-			<div class="col text-center mb-4 mb-lg-5">
+			<div class="col text-center">
 				<div class="nav-scroller mb-0">
 					<ul class="nav justify-content-lg-center d-flex m-auto align-items-center tablist scroller" id="myTab" role="tablist">
 						<li class="nav-item">

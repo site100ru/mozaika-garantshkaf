@@ -613,7 +613,7 @@
 <!-- ==========================================================================
      Reviews section
      ========================================================================== -->
-<section class="section-testimonials bg">
+<section class="section-testimonials bg" id="sp-testimonials">
 	<div class="container">
 		<div class="section-title-wrapper text-center">
 			<h2 class="section-title">Отзывы о нас в независимых источниках</h2>
@@ -742,7 +742,7 @@
 <!-- ==========================================================================
      КАК МЫ РАБОТАЕМ
      ========================================================================== -->
-<section class="howto bg">
+<section class="howto bg" id="sp-kak-zakazat">
 	<div class="container">
 		<div class="section-title-wrapper text-center">
 			<h2 class="section-title">Как мы работаем</h2>
@@ -796,7 +796,7 @@
 <!-- ==========================================================================
      FAQ section
      ========================================================================== -->
-<section class="faq bg">
+<section class="faq bg" id="sp-faq">
 	<div class="container">
 		<div class="section-title-wrapper text-center">
 			<h2 class="section-title">Частые вопросы</h2>

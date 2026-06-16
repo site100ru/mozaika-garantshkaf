@@ -136,6 +136,46 @@ add_action('add_meta_boxes', function () {
 	);
 });
 
+function gsh_portfolio_cat_name() {
+	$name = single_term_title('', false);
+	$name = preg_replace('/^\s*\d+\s*-\s*/u', '', $name); // убрать числовой префикс «023-»
+	$name = str_replace('-', ' ', $name);                 // дефисы → пробелы
+	if ( $name !== '' ) {
+		$name = mb_strtoupper( mb_substr($name, 0, 1) ) . mb_substr($name, 1); // первая буква заглавная
+	}
+	return $name;
+}
+
+function echo_title() {
+	$site = get_bloginfo('name'); // Название сайта из «Настройки → Общие»
+	if ( is_post_type_archive('portfolio') ) {
+		return 'Наши работы — ' . $site;
+	}
+	if ( is_tax('portfolio-cat') ) {
+		return gsh_portfolio_cat_name() . ' — ' . $site;
+	}
+	if ( is_page_template('calculator-new.php') || is_page_template('calculator.php') ) {
+		return 'Калькулятор стоимости мебели на заказ — ' . $site;
+	}
+	return '';
+}
+
+function echo_description() {
+	$site = get_bloginfo('name'); // Название сайта из «Настройки → Общие»
+	if ( is_tax('portfolio-cat') ) {
+		$desc = wp_strip_all_tags( term_description() );
+		return $desc !== '' ? $desc : 'Примеры наших работ: ' . gsh_portfolio_cat_name() . ' на заказ от производителя';
+	}
+	if ( is_post_type_archive('portfolio') ) {
+		return 'Наши выполненные работы — корпусная мебель на заказ от производителя';
+	}
+	if ( is_page_template('calculator-new.php') || is_page_template('calculator.php') ) {
+		return 'Онлайн-калькулятор стоимости корпусной мебели на заказ — ' . $site;
+	}
+	return '';
+}
+/*** END SEO title / description ***/
+
 add_action('save_post', function ($post_id) {
 	if (isset($_POST['price'])) {
 		update_post_meta($post_id, 'price', sanitize_text_field($_POST['price']));

@@ -295,7 +295,7 @@ include 'header.php';
 <!-- ==========================================================================
      Reviews section
      ========================================================================== -->
-<section class="section-testimonials bg">
+<section class="section-testimonials bg" id="sp-testimonials">
 	<div class="container">
 		<div class="section-title-wrapper text-center">
 			<h2 class="section-title">Отзывы о нас в независимых источниках</h2>
