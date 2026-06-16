@@ -164,12 +164,24 @@ include 'header.php';
 	<div class="container">
 		<div class="row align-items-center text-start">
 			<div class="col py-5">
-				<h1 class="my-5">Наши лучшие работы</h1>
+				<h1 class="portfolio-title">Наши лучшие работы</h1>
 			</div>
 		</div>
 	</div>
 </header>
 <!-- END SECTION HOME -->
+
+<!-- ==========================================================================
+     ХЛЕБНЫЕ КРОШКИ
+     ========================================================================== -->
+<section class="crumbs bg">
+	<div class="container">
+		<nav class="crumbs__nav woocommerce-breadcrumb" itemprop="breadcrumb">
+			<a href="<?php echo home_url('/'); ?>"><img src="<?php echo $theme_uri; ?>/img/ico/advantage/breadcrumbs-icon.svg" alt=""></a>
+			/ <span>Наши работы</span>
+		</nav>
+	</div>
+</section>
 
 <!-- ==========================================================================
      НАШИ РАБОТЫ (новый масонри)
@@ -190,7 +202,7 @@ include 'header.php';
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-4 offset-lg-1">
-				<div class="lead__form form--light section-title-wrapper">
+				<div class="lead__form form--light section-title-wrapper mb-60">
 					<h2 class="section-title">Рассчитаем точную стоимость корпусной мебели за&nbsp;15&nbsp;минут!</h2>
 					<p class="lead__subtitle">Опишите изделие своими словами. При возможности прикрепите изображение</p>
 					<img class="lead__points" src="<?php echo $theme_uri; ?>/img/ico/advantage/title-decoration.svg" alt="" />
@@ -235,7 +247,7 @@ include 'header.php';
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer" style="margin-top: 0;">
+<footer class="footer">
 	<div class="container">
 		<div class="row">
 

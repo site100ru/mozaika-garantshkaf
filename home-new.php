@@ -12,8 +12,10 @@
 		$display = "block";
 	} else $display = "none";
 
-	if ( isset( $_GET['location'] ) ) {
-		switch ( $_GET['location'] ) {
+	$current_location = get_query_var('location');
+
+	if ( $current_location ) {
+		switch ( $current_location ) {
 			case 'vidnoe': $location = ' в&nbsp;Видном'; $address = 'гор. Видное'; break;
 			case 'volokolamsk': $location = ' в&nbsp;Волоколамске'; $address = 'гор. Волоколамск'; break;
 			case 'dolgoprudniy':$location = ' в&nbsp;Долгопрудном'; $address = 'гор. Долгопрудный'; break;

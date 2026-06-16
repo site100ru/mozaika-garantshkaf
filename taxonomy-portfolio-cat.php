@@ -176,6 +176,19 @@ $current_name = $current_term->name ?? 'Наши работы';
 <!-- END SECTION HOME -->
 
 <!-- ==========================================================================
+     ХЛЕБНЫЕ КРОШКИ
+     ========================================================================== -->
+<section class="crumbs bg">
+	<div class="container">
+		<nav class="crumbs__nav woocommerce-breadcrumb" itemprop="breadcrumb">
+			<a href="<?php echo home_url('/'); ?>"><img src="<?php echo $theme_uri; ?>/img/ico/advantage/breadcrumbs-icon.svg" alt=""></a>
+			/ <a href="<?php echo home_url('/portfolio/'); ?>">Наши работы</a>
+			/ <span><?php echo esc_html($current_name); ?></span>
+		</nav>
+	</div>
+</section>
+
+<!-- ==========================================================================
      РАБОТЫ ТЕКУЩЕЙ КАТЕГОРИИ (новый масонри с фильтром)
      ========================================================================== -->
 <?php get_template_part('template-parts/portfolio-masonry-new/portfolio-masonry-new', null, [
@@ -194,7 +207,7 @@ $current_name = $current_term->name ?? 'Наши работы';
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-4 offset-lg-1">
-				<div class="lead__form form--light section-title-wrapper">
+				<div class="lead__form form--light section-title-wrapper mb-60">
 					<h2 class="section-title">Рассчитаем точную стоимость корпусной мебели за&nbsp;15&nbsp;минут!</h2>
 					<p class="lead__subtitle">Опишите изделие своими словами. При возможности прикрепите изображение</p>
 					<img class="lead__points" src="<?php echo $theme_uri; ?>/img/ico/advantage/title-decoration.svg" alt="" />
@@ -239,7 +252,7 @@ $current_name = $current_term->name ?? 'Наши работы';
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer" style="margin-top: 0;">
+<footer class="footer">
 	<div class="container">
 		<div class="row">
 

@@ -386,7 +386,7 @@ include 'header.php';
 		</div>
 
 		<div class="text-center mt-4">
-			<a href="https://yandex.ru/maps/org/garantshkaf/43131278671/" target="_blank" class="btn-grad works__more">Все отзывы</a>
+			<a href="https://yandex.ru/maps/org/garantshkaf/43131278671/" target="_blank" class="btn-grad works__more mb-60">Все отзывы</a>
 		</div>
 	</div>
 </section>
@@ -394,7 +394,7 @@ include 'header.php';
 <!-- ==========================================================================
      ПОДВАЛ
      ========================================================================== -->
-<footer class="footer footer--no-offset">
+<footer class="footer">
 	<div class="container">
 		<div class="row">
 
