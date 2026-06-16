@@ -702,7 +702,7 @@ include 'header.php';
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqC2" aria-expanded="false" aria-controls="faqC2">Насколько надёжная ваша компания?</button>
 						</h4>
 						<div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2" data-bs-parent="#faqAccordion">
-							<div class="accordion-body">Мы делаем шкафы-купе и другую корпусную мебель с 2011 года. Имеем собственное производство, которое Вы можете посетить, чтобы убедиться, что мы сами изготавливаем все шкафы, а не поручаем это другим, а с вас берём дополнительную наценку.</div>
+							<div class="accordion-body">Мы делаем шкафы, гардеробные и другую корпусную мебель с 2011 года. Имеем собственное производство, которое Вы можете посетить, чтобы убедиться, что мы сами изготавливаем всю мебель, а не поручаем это другим, а с вас берём дополнительную наценку.</div>
 						</div>
 					</div>
 					<div class="accordion-item">
