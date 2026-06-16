@@ -76,9 +76,30 @@ function add_location_rewrite_rule() {
 		'index.php?pagename=$matches[1]&location=$matches[2]', // Внутренний запрос
 		'top' // Высокий приоритет
 	);
-	
+
+	// 1b. Правило для ГЛАВНОЙ: /регион/ → статическая главная (page_on_front) + location.
+	// Ограничено списком реальных локаций, чтобы не перехватывать обычные страницы.
+	$front_id = (int) get_option('page_on_front');
+	if ( $front_id ) {
+		$loc = 'vidnoe|volokolamsk|dolgoprudniy|dmitrov|zvenigorod|zelenograd|ivanteevka|korolev|krasnogorsk|lobnya|lyubercy|moskva|mytischi|mojaysk|nahabino|odintsovo|pushkino|sergiev-posad|troitsk|himki|schelkovo|balashiha|bibirevo|bronnicy|chehov|dedovsk|domodedovo|dubna|dzerjinsk|egoryevsk|elektrostal|fryazino|golicino|hotkovo|iksha|istra|ivanovo|jeleznodorojniy|jukovskiy|kashira|klin|kolomna|kommunarka|lytkarino|orehovo-zuevo|ozery|podolsk|reutov|serpuhov|solnechnogorsk|sofrino|stupino|voskresensk|yahroma|zaraysk';
+		add_rewrite_rule(
+			'^(' . $loc . ')/?$',
+			'index.php?page_id=' . $front_id . '&location=$matches[1]',
+			'top'
+		);
+	}
+
 	// Обновляем правила (выполнить 1 раз, потом можно закомментировать, чтобы не нагружать сайт!)
 	flush_rewrite_rules();
+}
+
+// Не редиректить URL с локацией канонически (иначе WP кинет /регион/ обратно на /)
+add_filter('redirect_canonical', 'keep_location_url');
+function keep_location_url($redirect_url) {
+	if ( get_query_var('location') ) {
+		return false;
+	}
+	return $redirect_url;
 }
 
 	// Добавляем параметр "location" в разрешенные query_vars

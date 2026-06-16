@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Распашные шкафы (новая)
+ * Template Name: Шкафы распашные (новая)
  * Template Post Type: page
  */
 

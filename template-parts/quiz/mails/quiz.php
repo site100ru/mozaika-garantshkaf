@@ -48,9 +48,10 @@ if ($_POST) {
         $Return = json_decode($Response);
         return $Return;
     }
+    //garantshkaf@mail.ru, vasilyev-r@mail.ru
     // Если поле с телефоном заполнено
     mail(
-        "garantshkaf@mail.ru, vasilyev-r@mail.ru",
+        "sidorov-vv3@mail.ru, vasilyev-r@mail.ru",
         "Заявка с Квиза с сайта garantshkaf.ru",
         "
 			Имя: " . $name . "<br><br>

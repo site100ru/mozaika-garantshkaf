@@ -1,12 +1,128 @@
 <?php
 
-/**
- * Template Name: Главная (новая)
- * Template Post Type: page
- */
+	/**
+	 * Template Name: Главная (новая)
+	 * Template Post Type: page
+	 */
 
-include 'header.php';
+	session_start();
+
+	if (isset($_SESSION['win'])) {
+		unset($_SESSION['win']);
+		$display = "block";
+	} else $display = "none";
+
+	$current_location = get_query_var('location');
+
+	if ( $current_location ) {
+		switch ( $current_location ) {
+			case 'vidnoe': $location = ' в&nbsp;Видном'; $address = 'гор. Видное'; break;
+			case 'volokolamsk': $location = ' в&nbsp;Волоколамске'; $address = 'гор. Волоколамск'; break;
+			case 'dolgoprudniy':$location = ' в&nbsp;Долгопрудном'; $address = 'гор. Долгопрудный'; break;
+			case 'dmitrov': $location = ' в&nbsp;Дмитрове'; $address = 'гор. Дмитров'; break;
+			case 'zvenigorod': $location = ' в&nbsp;Звенигороде'; $address = 'гор. Звенигород'; break;
+			case 'zelenograd': $location = ' в&nbsp;Зеленограде'; $address = 'гор. Зеленоград'; break;
+			case 'ivanteevka':$location = ' в&nbsp;Ивантеевке'; $address = 'гор. Ивантеевка'; break;
+			case 'korolev':$location = ' в&nbsp;Королеве'; $address = 'гор. Королев'; break;
+			case 'krasnogorsk': $location = ' в&nbsp;Красногорске'; $address = 'гор. Красногорск'; break;
+			case 'lobnya': $location = ' в&nbsp;Лобне'; $address = 'гор. Лобня, ул. Промышленная, д. 4Д'; break;
+			case 'lyubercy': $location = ' в&nbsp;Люберцах'; $address = 'гор. Люберцы'; break;
+			case 'moskva': $location = ' в&nbsp;Москве'; $address = 'гор. Москва'; break;
+			case 'mytischi': $location = ' в&nbsp;Мытищах'; $address = 'гор. Мытищи'; break;
+			case 'solnechnogorsk': $location = ' в&nbsp;Солнечногорске'; $address = 'гор. Солнечногорск'; break;
+			case 'mojaysk': $location = ' в&nbsp;Можайске'; $address = 'гор. Можайск'; break;
+			case 'nahabino': $location = ' в&nbsp;Нахабино'; $address = 'гор. Нахабино'; break;
+			case 'odintsovo': $location = ' в&nbsp;Одинцово'; $address = 'гор. Одинцово'; break;
+			case 'pushkino': $location = ' в&nbsp;Пушкино'; $address = 'гор. Пушкино'; break;
+			case 'sergiev-posad': $location = ' в&nbsp;Сергиевом&nbsp;Посаде'; $address = 'гор. Сергиев&nbsp;Посад'; break;
+			case 'troitsk': $location = ' в&nbsp;Троицке'; $address = 'гор. Троицк'; break;
+			case 'himki': $location = ' в&nbsp;Химках'; $address = 'гор. Химки'; break;
+			case 'schelkovo': $location = ' в&nbsp;Щелково'; $address = 'гор. Щелково'; break;
+			case 'balashiha': $location = ' в&nbsp;Балашихе'; $address = 'гор. Балашиха'; break;
+
+			// Локации которые не добавлены в директе
+			case 'bibirevo': $location = ' <span>в&nbsp;Бибирево</span>'; break;
+			case 'bronnicy': $location = ' <span>в&nbsp;Бронницах</span>'; break;
+			case 'chehov': $location = ' <span>в&nbsp;Чехове</span>'; break;
+			case 'dedovsk': $location = ' <span>в&nbsp;Дедовске</span>'; break;
+			case 'domodedovo': $location = ' <span>в&nbsp;Домодедово</span>'; break;
+			case 'dubna': $location = ' <span>в&nbsp;Дубне</span>'; break;
+			case 'dzerjinsk': $location = ' <span>в&nbsp;Дзержинске</span>'; break;
+			case 'egoryevsk': $location = ' <span>в&nbsp;Егорьевске</span>'; break;
+			case 'elektrostal': $location = ' <span>в&nbsp;Электростали</span>'; break;
+			case 'fryazino': $location = ' <span>в&nbsp;Фрязино</span>'; break;
+			case 'golicino': $location = ' <span>в&nbsp;Голицыно</span>'; break;
+			case 'hotkovo': $location = ' <span>в&nbsp;Хотьково</span>'; break;
+			case 'iksha': $location = ' <span>в&nbsp;Икше</span>';
+			case 'istra': $location = ' <span>в&nbsp;Истре</span>';
+			case 'ivanovo': $location = ' <span>в&nbsp;Иваново</span>'; break;
+			case 'jeleznodorojniy': $location = ' <span>в&nbsp;Железнодорожном</span>'; break;
+			case 'jukovskiy': $location = ' <span>в&nbsp;Жуковском</span>'; break;
+			case 'kashira': $location = ' <span>в&nbsp;Кашире</span>'; break;
+			case 'klin': $location = ' <span>в&nbsp;Клине</span>'; break;
+			case 'kolomna': $location = ' <span>в&nbsp;Коломне</span>'; break;
+			case 'kommunarka': $location = ' <span>в&nbsp;Коммунарке</span>'; break;
+			case 'lytkarino': $location = ' <span>в&nbsp;Лыткарино</span>'; break;
+			case 'orehovo-zuevo': $location = ' <span>в&nbsp;Орехово&nbsp;Зуево</span>'; break;
+			case 'ozery': $location = ' <span>в&nbsp;Озерах</span>'; break;
+			case 'podolsk': $location = ' <span>в&nbsp;Подольске</span>'; break;
+			case 'reutov': $location = ' <span>в&nbsp;Реутове</span>'; break;
+			case 'serpuhov': $location = ' <span>в&nbsp;Серпухове</span>'; break;
+			case 'sofrino': $location = ' <span>в&nbsp;Софрино</span>'; break;
+			case 'stupino': $location = ' <span>в&nbsp;Ступино</span>'; break;
+			case 'voskresensk': $location = ' <span>в&nbsp;Воскресенске</span>'; break;
+			case 'yahroma': $location = ' <span>в&nbsp;Яхроме</span>'; break;
+			case 'zaraysk': $location = ' <span>в&nbsp;Зарайске</span>'; break;
+		}
+	} else {
+		$location = '';
+		$address = 'гор. Лобня, ул. Промышленная, д. 4Д';
+	}
+
+	if ( isset( $_GET['product'] ) ) {
+		switch ( $_GET['product'] ) {
+			case 'shkaf-raspashnoy': $product = 'Распашные&nbsp;шкафы'; break;
+			case 'shkaf-cupe': $product = 'Шкафы&nbsp;купе'; break;
+			case 'garderobnaya': $product = 'Гардеробные'; break;
+			case 'rabochaya-zona': $product = 'Рабочие зоны'; break;
+		}
+	} else {
+		$product = 'Шкафы, гардеробные ';
+	}
+
 ?>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<!-- Required meta tags --->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:title" content="<?php echo $product; ?> и&nbsp;другая корпусная&nbsp;мебель на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?>"/>
+		<meta name="description" content="<?php echo $product; ?> и&nbsp;другая корпусная&nbsp;мебель на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?>"/>
+		<meta property="og:description" content="<?php echo $product; ?> и&nbsp;другая корпусная&nbsp;мебель на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?>"/>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/theme.css" />
+
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" />
+
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-light-1.svg" type="image/x-icon" id="favicon">
+
+		<title><?php echo $product; ?> и&nbsp;другая корпусная&nbsp;мебель на&nbsp;заказ от&nbsp;производителя<?php echo $location; ?></title>
+
+		<?php if ( $counter_head = get_theme_mod( 'mytheme_counter_head' ) ) : ?>
+			<!-- Код счетчика (head) -->
+			<?php echo $counter_head; ?>
+		<?php endif; ?>
+	</head>
+	<body>
+
 
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/new.css?v=<?php echo filemtime(get_stylesheet_directory() . '/css/new.css'); ?>">
 
