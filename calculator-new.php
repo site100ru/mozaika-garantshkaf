@@ -5,10 +5,9 @@
  * Template Post Type: page
  */
 
-include 'header.php';
-?>
+include "header.php"; ?>
 
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/new.css?v=<?php echo filemtime(get_stylesheet_directory() . '/css/new.css'); ?>">
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/new.css?v=<?php echo filemtime(get_stylesheet_directory() . "/css/new.css"); ?>">
 
 <?php $theme_uri = get_stylesheet_directory_uri(); ?>
 
@@ -26,7 +25,7 @@ include 'header.php';
 				<div class="topbar__info">
 					<a class="topbar__item" href="https://yandex.ru/maps/org/garantshkaf/43131278671/" target="_blank">
 						<img src="<?php echo $theme_uri; ?>/img/ico/location-ico.svg" alt="" />
-						<span><?php echo explode(',', $address)[0]; ?></span>
+						<span><?php echo explode(",", $address)[0]; ?></span>
 					</a>
 					<div class="topbar__item">
 						<img src="<?php echo $theme_uri; ?>/img/ico/clock-ico.svg" alt="" />
@@ -69,13 +68,13 @@ include 'header.php';
 								<span class="navbar-toggler-icon"></span>
 							</button>
 							<div class="collapse navbar-collapse" id="mobail-header-collapse">
-								<?php
-							wp_nav_menu(array(
-								'theme_location' => 'mobail-header-collapse',
-								'container' => false,
-								'menu_class' => '',
-								'fallback_cb' => '__return_false',
-								'items_wrap' => '
+								<?php wp_nav_menu([
+        	"theme_location" => "mobail-header-collapse",
+        	"container" => false,
+        	"menu_class" => "",
+        	"fallback_cb" => "__return_false",
+        	"items_wrap" =>
+        		'
 										<ul id="%1$s" class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0 %2$s">%3$s
 											<!-- Mobile menu -->
 											<li class="nav-item d-lg-none mobile-item">
@@ -85,35 +84,46 @@ include 'header.php';
 											</li>
 											<li class="nav-item d-lg-none mobile-item">
 												<div>
-													<img  src="' . get_stylesheet_directory_uri() . '/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
-													<span>' . $address . '</span>
+													<img  src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
+													<span>' .
+        		$address .
+        		'</span>
 										</div>
 										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89856445775">
 											8 (985) 644-57-75
 										</a>
 										<div class="mb-2" style="font-size: 12px;  font-family: Gilroy-Light;  text-transform: none;">
-											<img src="' . get_stylesheet_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px" class="me-1 mb-2" />
+											<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px" class="me-1 mb-2" />
 											Ежедневно с 8:00 до 22:00
 										</div>
 										</li>
 										<li class="nav-item d-lg-none pb-4">
 											<a class="ico-button pe-2" href="https://wa.me/79856445775?web=1&app_absent=1" target="blank">
-												<img src="' . get_stylesheet_directory_uri() . '/img/ico/whatsapp-ico.svg" />
+												<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/whatsapp-ico.svg" />
 											</a>
 											<a class="ico-button pe-2" href="https://t.me/+79856445775" target="blank">
-												<img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg" />
+												<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/telegram-ico.svg" />
 											</a>
 											<a class="ico-button pe-0" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="blank">
-												<img src="'.get_stylesheet_directory_uri().'/img/ico/max-ico.svg" />
+												<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/max-ico.svg" />
 											</a>
 										</li>
 										<!-- End mobile menu -->
 										</ul>
 										',
-								'depth' => 2,
-								'walker' => new bootstrap_5_wp_nav_menu_walker()
-							));
-							?>
+        	"depth" => 2,
+        	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+        ]); ?>
 							</div><!-- /#mobail-header-collapse -->
 						</div><!-- /.container -->
 					</nav>
@@ -207,13 +217,13 @@ include 'header.php';
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="sliding-header-collapse">
-				<?php
-					wp_nav_menu(array(
-						'theme_location' => 'sliding-header-collapse',
-						'container' => false,
-						'menu_class' => '',
-						'fallback_cb' => '__return_false',
-						'items_wrap' => '
+				<?php wp_nav_menu([
+    	"theme_location" => "sliding-header-collapse",
+    	"container" => false,
+    	"menu_class" => "",
+    	"fallback_cb" => "__return_false",
+    	"items_wrap" =>
+    		'
 								<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-lg-0 %2$s">%3$s
 									<!-- Mobile menu -->
 									<li class="nav-item d-lg-none mobile-item">
@@ -223,33 +233,44 @@ include 'header.php';
 									</li>
 									<li  class="nav-item d-lg-none mobile-item mobile-schedule mb-md-2">
 										<div class="location-block">
-											<img  src="' . get_stylesheet_directory_uri() . '/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
-											<span>' . $address . '</span>
+											<img  src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
+											<span>' .
+    		$address .
+    		'</span>
 										</div>
 										<a  class="nav-link top-menu-tel pt-1 pb-1"  href="tel:89856445775">
 											8 (985) 644-57-75
 										</a>
-										<img  src="' . get_stylesheet_directory_uri() . '/img/ico/clock-ico.svg"  style="width: 10px; position: relative; top: 2px"  class="me-1 mb-2"/>
+										<img  src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/clock-ico.svg"  style="width: 10px; position: relative; top: 2px"  class="me-1 mb-2"/>
 										Ежедневно с 8:00 до 22:00
 									</li>
 									<li class="nav-item d-lg-none pt-2 pb-4">
 										<a class="ico-button pe-2 text-decoration-none" href="https://wa.me/79856445775?web=1&app_absent=1" target="blank">
-											<img src="' . get_stylesheet_directory_uri() . '/img/ico/whatsapp-ico.svg" />
+											<img src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/whatsapp-ico.svg" />
 										</a>
 										<a class="ico-button pe-2 text-decoration-none" href="https://t.me/+79856445775" target="blank">
-											<img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg" />
+											<img src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/telegram-ico.svg" />
 										</a>
 										<a class="ico-button pe-0 text-decoration-none" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="blank">
-											<img src="'.get_stylesheet_directory_uri().'/img/ico/max-ico.svg" />
+											<img src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/max-ico.svg" />
 										</a>
 									</li>
 									<!-- End mobile menu -->
 								</ul>
 							',
-						'depth' => 2,
-						'walker' => new bootstrap_5_wp_nav_menu_walker()
-					));
-					?>
+    	"depth" => 2,
+    	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+    ]); ?>
 			</div>
 		</div>
 	</nav>
@@ -261,7 +282,7 @@ include 'header.php';
 <section class="crumbs bg">
 	<div class="container">
 		<nav class="crumbs__nav woocommerce-breadcrumb" itemprop="breadcrumb">
-			<a href="<?php echo home_url('/'); ?>"><img src="<?php echo $theme_uri; ?>/img/ico/advantage/breadcrumbs-icon.svg" alt=""></a>
+			<a href="<?php echo home_url("/"); ?>"><img src="<?php echo $theme_uri; ?>/img/ico/advantage/breadcrumbs-icon.svg" alt=""></a>
 			/ <span>Калькулятор стоимости</span>
 		</nav>
 	</div>
@@ -270,7 +291,7 @@ include 'header.php';
 <!-- ==========================================================================
      КАЛЬКУЛЯТОР (КВИЗ)
      ========================================================================== -->
-<?php get_template_part('template-parts/quiz-new/calculator_quiz-new'); ?>
+<?php get_template_part("template-parts/quiz-new/calculator_quiz-new"); ?>
 
 <!-- ==========================================================================
      АКЦИИ ОТ НАШЕЙ ФАБРИКИ
@@ -283,10 +304,10 @@ include 'header.php';
 		</div>
 		<div class="row">
 			<div class="col-12 col-md-6 mb-4 mb-md-0">
-				<img src="<?php echo $theme_uri; ?>/img/card/action-card.webp" class="stock__img" loading="lazy" alt="Скидка до 25%. Акция до 30 июня">
+				<img src="<?php echo $theme_uri; ?>/img/card/action-card.webp" class="stock__img" loading="lazy" alt="Скидка до 25%. Акция до 31 июля">
 			</div>
 			<div class="col-12 col-md-6">
-				<img src="<?php echo $theme_uri; ?>/img/card/action-card-2.webp" class="stock__img" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 30 июня">
+				<img src="<?php echo $theme_uri; ?>/img/card/action-card-2.webp" class="stock__img" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 31 июля">
 			</div>
 		</div>
 	</div>
@@ -400,7 +421,7 @@ include 'header.php';
 
 			<!-- Колонка 1: логотип + контакты -->
 			<div class="col-12 col-lg-3 order-1 order-lg-1">
-				<a class="footer__logo" href="<?php echo home_url('/'); ?>">
+				<a class="footer__logo" href="<?php echo home_url("/"); ?>">
 					<img src="<?php echo $theme_uri; ?>/img/ico/logo.svg" alt="Гарантшкаф" />
 				</a>
 				<div class="footer__contacts">
@@ -421,30 +442,26 @@ include 'header.php';
 
 			<!-- Меню (левая колонка) -->
 			<div class="col-6 col-lg-3 order-3 order-lg-2">
-				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'footer-menu-left',
-					'container'      => false,
-					'menu_class'     => 'footer__menu',
-					'depth'          => 2,
-					'fallback_cb'    => '__return_false',
-					'walker'         => new bootstrap_5_wp_nav_menu_walker(),
-				));
-				?>
+				<?php wp_nav_menu([
+    	"theme_location" => "footer-menu-left",
+    	"container" => false,
+    	"menu_class" => "footer__menu",
+    	"depth" => 2,
+    	"fallback_cb" => "__return_false",
+    	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+    ]); ?>
 			</div>
 
 			<!-- Меню (правая колонка) -->
 			<div class="col-6 col-lg-3 order-4 order-lg-3">
-				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'footer-menu-right',
-					'container'      => false,
-					'menu_class'     => 'footer__menu',
-					'depth'          => 2,
-					'fallback_cb'    => '__return_false',
-					'walker'         => new bootstrap_5_wp_nav_menu_walker(),
-				));
-				?>
+				<?php wp_nav_menu([
+    	"theme_location" => "footer-menu-right",
+    	"container" => false,
+    	"menu_class" => "footer__menu",
+    	"depth" => 2,
+    	"fallback_cb" => "__return_false",
+    	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+    ]); ?>
 			</div>
 
 			<!-- Колонка 4: контакты + соцсети -->
@@ -484,11 +501,11 @@ include 'header.php';
 
 	<div class="container">
 		<div id="footer__new">
-			<p class="footer__new__copy">©<?php echo date('Y'); ?> Мебельная фабрика «Гарантшкаф»</p>
+			<p class="footer__new__copy">©<?php echo date("Y"); ?> Мебельная фабрика «Гарантшкаф»</p>
 			<p class="footer__new__dev">Создание, продвижение и поддержка сайтов: <a href="https://site100.ru" target="_blank">site<span>100</span>.ru</a></p>
 		</div>
 	</div>
 </footer>
 
 
-<?php include 'footer.php'; ?>
+<?php include "footer.php"; ?>

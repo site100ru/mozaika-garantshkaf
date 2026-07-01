@@ -1,95 +1,235 @@
 <?php
 
-	/**
-	 * Template Name: Главная (новая)
-	 * Template Post Type: page
-	 */
+/**
+ * Template Name: Главная (новая)
+ * Template Post Type: page
+ */
 
-	session_start();
+session_start();
 
-	if (isset($_SESSION['win'])) {
-		unset($_SESSION['win']);
-		$display = "block";
-	} else $display = "none";
+if (isset($_SESSION["win"])) {
+	unset($_SESSION["win"]);
+	$display = "block";
+} else {
+	$display = "none";
+}
 
-	$current_location = get_query_var('location');
+$current_location = get_query_var("location");
 
-	if ( $current_location ) {
-		switch ( $current_location ) {
-			case 'vidnoe': $location = ' в&nbsp;Видном'; $address = 'гор. Видное'; break;
-			case 'volokolamsk': $location = ' в&nbsp;Волоколамске'; $address = 'гор. Волоколамск'; break;
-			case 'dolgoprudniy':$location = ' в&nbsp;Долгопрудном'; $address = 'гор. Долгопрудный'; break;
-			case 'dmitrov': $location = ' в&nbsp;Дмитрове'; $address = 'гор. Дмитров'; break;
-			case 'zvenigorod': $location = ' в&nbsp;Звенигороде'; $address = 'гор. Звенигород'; break;
-			case 'zelenograd': $location = ' в&nbsp;Зеленограде'; $address = 'гор. Зеленоград'; break;
-			case 'ivanteevka':$location = ' в&nbsp;Ивантеевке'; $address = 'гор. Ивантеевка'; break;
-			case 'korolev':$location = ' в&nbsp;Королеве'; $address = 'гор. Королев'; break;
-			case 'krasnogorsk': $location = ' в&nbsp;Красногорске'; $address = 'гор. Красногорск'; break;
-			case 'lobnya': $location = ' в&nbsp;Лобне'; $address = 'гор. Лобня, ул. Промышленная, д. 4Д'; break;
-			case 'lyubercy': $location = ' в&nbsp;Люберцах'; $address = 'гор. Люберцы'; break;
-			case 'moskva': $location = ' в&nbsp;Москве'; $address = 'гор. Москва'; break;
-			case 'mytischi': $location = ' в&nbsp;Мытищах'; $address = 'гор. Мытищи'; break;
-			case 'solnechnogorsk': $location = ' в&nbsp;Солнечногорске'; $address = 'гор. Солнечногорск'; break;
-			case 'mojaysk': $location = ' в&nbsp;Можайске'; $address = 'гор. Можайск'; break;
-			case 'nahabino': $location = ' в&nbsp;Нахабино'; $address = 'гор. Нахабино'; break;
-			case 'odintsovo': $location = ' в&nbsp;Одинцово'; $address = 'гор. Одинцово'; break;
-			case 'pushkino': $location = ' в&nbsp;Пушкино'; $address = 'гор. Пушкино'; break;
-			case 'sergiev-posad': $location = ' в&nbsp;Сергиевом&nbsp;Посаде'; $address = 'гор. Сергиев&nbsp;Посад'; break;
-			case 'troitsk': $location = ' в&nbsp;Троицке'; $address = 'гор. Троицк'; break;
-			case 'himki': $location = ' в&nbsp;Химках'; $address = 'гор. Химки'; break;
-			case 'schelkovo': $location = ' в&nbsp;Щелково'; $address = 'гор. Щелково'; break;
-			case 'balashiha': $location = ' в&nbsp;Балашихе'; $address = 'гор. Балашиха'; break;
+if ($current_location) {
+	switch ($current_location) {
+		case "vidnoe":
+			$location = " в&nbsp;Видном";
+			$address = "гор. Видное";
+			break;
+		case "volokolamsk":
+			$location = " в&nbsp;Волоколамске";
+			$address = "гор. Волоколамск";
+			break;
+		case "dolgoprudniy":
+			$location = " в&nbsp;Долгопрудном";
+			$address = "гор. Долгопрудный";
+			break;
+		case "dmitrov":
+			$location = " в&nbsp;Дмитрове";
+			$address = "гор. Дмитров";
+			break;
+		case "zvenigorod":
+			$location = " в&nbsp;Звенигороде";
+			$address = "гор. Звенигород";
+			break;
+		case "zelenograd":
+			$location = " в&nbsp;Зеленограде";
+			$address = "гор. Зеленоград";
+			break;
+		case "ivanteevka":
+			$location = " в&nbsp;Ивантеевке";
+			$address = "гор. Ивантеевка";
+			break;
+		case "korolev":
+			$location = " в&nbsp;Королеве";
+			$address = "гор. Королев";
+			break;
+		case "krasnogorsk":
+			$location = " в&nbsp;Красногорске";
+			$address = "гор. Красногорск";
+			break;
+		case "lobnya":
+			$location = " в&nbsp;Лобне";
+			$address = "гор. Лобня, ул. Промышленная, д. 4Д";
+			break;
+		case "lyubercy":
+			$location = " в&nbsp;Люберцах";
+			$address = "гор. Люберцы";
+			break;
+		case "moskva":
+			$location = " в&nbsp;Москве";
+			$address = "гор. Москва";
+			break;
+		case "mytischi":
+			$location = " в&nbsp;Мытищах";
+			$address = "гор. Мытищи";
+			break;
+		case "solnechnogorsk":
+			$location = " в&nbsp;Солнечногорске";
+			$address = "гор. Солнечногорск";
+			break;
+		case "mojaysk":
+			$location = " в&nbsp;Можайске";
+			$address = "гор. Можайск";
+			break;
+		case "nahabino":
+			$location = " в&nbsp;Нахабино";
+			$address = "гор. Нахабино";
+			break;
+		case "odintsovo":
+			$location = " в&nbsp;Одинцово";
+			$address = "гор. Одинцово";
+			break;
+		case "pushkino":
+			$location = " в&nbsp;Пушкино";
+			$address = "гор. Пушкино";
+			break;
+		case "sergiev-posad":
+			$location = " в&nbsp;Сергиевом&nbsp;Посаде";
+			$address = "гор. Сергиев&nbsp;Посад";
+			break;
+		case "troitsk":
+			$location = " в&nbsp;Троицке";
+			$address = "гор. Троицк";
+			break;
+		case "himki":
+			$location = " в&nbsp;Химках";
+			$address = "гор. Химки";
+			break;
+		case "schelkovo":
+			$location = " в&nbsp;Щелково";
+			$address = "гор. Щелково";
+			break;
+		case "balashiha":
+			$location = " в&nbsp;Балашихе";
+			$address = "гор. Балашиха";
+			break;
 
-			// Локации которые не добавлены в директе
-			case 'bibirevo': $location = ' <span>в&nbsp;Бибирево</span>'; break;
-			case 'bronnicy': $location = ' <span>в&nbsp;Бронницах</span>'; break;
-			case 'chehov': $location = ' <span>в&nbsp;Чехове</span>'; break;
-			case 'dedovsk': $location = ' <span>в&nbsp;Дедовске</span>'; break;
-			case 'domodedovo': $location = ' <span>в&nbsp;Домодедово</span>'; break;
-			case 'dubna': $location = ' <span>в&nbsp;Дубне</span>'; break;
-			case 'dzerjinsk': $location = ' <span>в&nbsp;Дзержинске</span>'; break;
-			case 'egoryevsk': $location = ' <span>в&nbsp;Егорьевске</span>'; break;
-			case 'elektrostal': $location = ' <span>в&nbsp;Электростали</span>'; break;
-			case 'fryazino': $location = ' <span>в&nbsp;Фрязино</span>'; break;
-			case 'golicino': $location = ' <span>в&nbsp;Голицыно</span>'; break;
-			case 'hotkovo': $location = ' <span>в&nbsp;Хотьково</span>'; break;
-			case 'iksha': $location = ' <span>в&nbsp;Икше</span>';
-			case 'istra': $location = ' <span>в&nbsp;Истре</span>';
-			case 'ivanovo': $location = ' <span>в&nbsp;Иваново</span>'; break;
-			case 'jeleznodorojniy': $location = ' <span>в&nbsp;Железнодорожном</span>'; break;
-			case 'jukovskiy': $location = ' <span>в&nbsp;Жуковском</span>'; break;
-			case 'kashira': $location = ' <span>в&nbsp;Кашире</span>'; break;
-			case 'klin': $location = ' <span>в&nbsp;Клине</span>'; break;
-			case 'kolomna': $location = ' <span>в&nbsp;Коломне</span>'; break;
-			case 'kommunarka': $location = ' <span>в&nbsp;Коммунарке</span>'; break;
-			case 'lytkarino': $location = ' <span>в&nbsp;Лыткарино</span>'; break;
-			case 'orehovo-zuevo': $location = ' <span>в&nbsp;Орехово&nbsp;Зуево</span>'; break;
-			case 'ozery': $location = ' <span>в&nbsp;Озерах</span>'; break;
-			case 'podolsk': $location = ' <span>в&nbsp;Подольске</span>'; break;
-			case 'reutov': $location = ' <span>в&nbsp;Реутове</span>'; break;
-			case 'serpuhov': $location = ' <span>в&nbsp;Серпухове</span>'; break;
-			case 'sofrino': $location = ' <span>в&nbsp;Софрино</span>'; break;
-			case 'stupino': $location = ' <span>в&nbsp;Ступино</span>'; break;
-			case 'voskresensk': $location = ' <span>в&nbsp;Воскресенске</span>'; break;
-			case 'yahroma': $location = ' <span>в&nbsp;Яхроме</span>'; break;
-			case 'zaraysk': $location = ' <span>в&nbsp;Зарайске</span>'; break;
-		}
-	} else {
-		$location = '';
-		$address = 'гор. Лобня, ул. Промышленная, д. 4Д';
+		// Локации которые не добавлены в директе
+		case "bibirevo":
+			$location = " <span>в&nbsp;Бибирево</span>";
+			break;
+		case "bronnicy":
+			$location = " <span>в&nbsp;Бронницах</span>";
+			break;
+		case "chehov":
+			$location = " <span>в&nbsp;Чехове</span>";
+			break;
+		case "dedovsk":
+			$location = " <span>в&nbsp;Дедовске</span>";
+			break;
+		case "domodedovo":
+			$location = " <span>в&nbsp;Домодедово</span>";
+			break;
+		case "dubna":
+			$location = " <span>в&nbsp;Дубне</span>";
+			break;
+		case "dzerjinsk":
+			$location = " <span>в&nbsp;Дзержинске</span>";
+			break;
+		case "egoryevsk":
+			$location = " <span>в&nbsp;Егорьевске</span>";
+			break;
+		case "elektrostal":
+			$location = " <span>в&nbsp;Электростали</span>";
+			break;
+		case "fryazino":
+			$location = " <span>в&nbsp;Фрязино</span>";
+			break;
+		case "golicino":
+			$location = " <span>в&nbsp;Голицыно</span>";
+			break;
+		case "hotkovo":
+			$location = " <span>в&nbsp;Хотьково</span>";
+			break;
+		case "iksha":
+			$location = " <span>в&nbsp;Икше</span>";
+		case "istra":
+			$location = " <span>в&nbsp;Истре</span>";
+		case "ivanovo":
+			$location = " <span>в&nbsp;Иваново</span>";
+			break;
+		case "jeleznodorojniy":
+			$location = " <span>в&nbsp;Железнодорожном</span>";
+			break;
+		case "jukovskiy":
+			$location = " <span>в&nbsp;Жуковском</span>";
+			break;
+		case "kashira":
+			$location = " <span>в&nbsp;Кашире</span>";
+			break;
+		case "klin":
+			$location = " <span>в&nbsp;Клине</span>";
+			break;
+		case "kolomna":
+			$location = " <span>в&nbsp;Коломне</span>";
+			break;
+		case "kommunarka":
+			$location = " <span>в&nbsp;Коммунарке</span>";
+			break;
+		case "lytkarino":
+			$location = " <span>в&nbsp;Лыткарино</span>";
+			break;
+		case "orehovo-zuevo":
+			$location = " <span>в&nbsp;Орехово&nbsp;Зуево</span>";
+			break;
+		case "ozery":
+			$location = " <span>в&nbsp;Озерах</span>";
+			break;
+		case "podolsk":
+			$location = " <span>в&nbsp;Подольске</span>";
+			break;
+		case "reutov":
+			$location = " <span>в&nbsp;Реутове</span>";
+			break;
+		case "serpuhov":
+			$location = " <span>в&nbsp;Серпухове</span>";
+			break;
+		case "sofrino":
+			$location = " <span>в&nbsp;Софрино</span>";
+			break;
+		case "stupino":
+			$location = " <span>в&nbsp;Ступино</span>";
+			break;
+		case "voskresensk":
+			$location = " <span>в&nbsp;Воскресенске</span>";
+			break;
+		case "yahroma":
+			$location = " <span>в&nbsp;Яхроме</span>";
+			break;
+		case "zaraysk":
+			$location = " <span>в&nbsp;Зарайске</span>";
+			break;
 	}
+} else {
+	$location = "";
+	$address = "гор. Лобня, ул. Промышленная, д. 4Д";
+}
 
-	if ( isset( $_GET['product'] ) ) {
-		switch ( $_GET['product'] ) {
-			case 'shkaf-raspashnoy': $product = 'Распашные&nbsp;шкафы'; break;
-			case 'shkaf-cupe': $product = 'Шкафы&nbsp;купе'; break;
-			case 'garderobnaya': $product = 'Гардеробные'; break;
-			case 'rabochaya-zona': $product = 'Рабочие зоны'; break;
-		}
-	} else {
-		$product = 'Шкафы, гардеробные ';
+if (isset($_GET["product"])) {
+	switch ($_GET["product"]) {
+		case "shkaf-raspashnoy":
+			$product = "Распашные&nbsp;шкафы";
+			break;
+		case "shkaf-cupe":
+			$product = "Шкафы&nbsp;купе";
+			break;
+		case "garderobnaya":
+			$product = "Гардеробные";
+			break;
+		case "rabochaya-zona":
+			$product = "Рабочие зоны";
+			break;
 	}
-
+} else {
+	$product = "Шкафы, гардеробные ";
+}
 ?>
 
 
@@ -99,9 +239,18 @@
 		<!-- Required meta tags --->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta property="og:title" content="<?php echo get_bloginfo('name'); ?> — <?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
-		<meta name="description" content="<?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
-		<meta property="og:description" content="<?php echo get_bloginfo('description'); ?><?php echo $location; ?>"/>
+		<meta property="og:title" content="<?php echo get_bloginfo("name"); ?> — <?php
+ echo get_bloginfo("description");
+ echo $location;
+ ?>"/>
+		<meta name="description" content="<?php
+  echo get_bloginfo("description");
+  echo $location;
+  ?>"/>
+		<meta property="og:description" content="<?php
+  echo get_bloginfo("description");
+  echo $location;
+  ?>"/>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet" />
@@ -114,9 +263,12 @@
 
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-light-1.svg" type="image/x-icon" id="favicon">
 
-		<title><?php echo get_bloginfo('name'); ?> — <?php echo get_bloginfo('description'); ?><?php echo $location; ?></title>
+		<title><?php echo get_bloginfo("name"); ?> — <?php
+ echo get_bloginfo("description");
+ echo $location;
+ ?></title>
 
-		<?php if ( $counter_head = get_theme_mod( 'mytheme_counter_head' ) ) : ?>
+		<?php if ($counter_head = get_theme_mod("mytheme_counter_head")): ?>
 			<!-- Код счетчика (head) -->
 			<?php echo $counter_head; ?>
 		<?php endif; ?>
@@ -124,7 +276,7 @@
 	<body>
 
 
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/new.css?v=<?php echo filemtime(get_stylesheet_directory() . '/css/new.css'); ?>">
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/new.css?v=<?php echo filemtime(get_stylesheet_directory() . "/css/new.css"); ?>">
 
 <?php $theme_uri = get_stylesheet_directory_uri(); ?>
 
@@ -142,7 +294,7 @@
 				<div class="topbar__info">
 					<a class="topbar__item" href="https://yandex.ru/maps/org/garantshkaf/43131278671/" target="_blank">
 						<img src="<?php echo $theme_uri; ?>/img/ico/location-ico.svg" alt="" />
-						<span><?php echo explode(',', $address)[0]; ?></span>
+						<span><?php echo explode(",", $address)[0]; ?></span>
 					</a>
 					<div class="topbar__item">
 						<img src="<?php echo $theme_uri; ?>/img/ico/clock-ico.svg" alt="" />
@@ -185,13 +337,13 @@
 								<span class="navbar-toggler-icon"></span>
 							</button>
 							<div class="collapse navbar-collapse" id="mobail-header-collapse">
-								<?php
-							wp_nav_menu(array(
-								'theme_location' => 'mobail-header-collapse',
-								'container' => false,
-								'menu_class' => '',
-								'fallback_cb' => '__return_false',
-								'items_wrap' => '
+								<?php wp_nav_menu([
+        	"theme_location" => "mobail-header-collapse",
+        	"container" => false,
+        	"menu_class" => "",
+        	"fallback_cb" => "__return_false",
+        	"items_wrap" =>
+        		'
 										<ul id="%1$s" class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0 %2$s">%3$s
 											<!-- Mobile menu -->
 											<li class="nav-item d-lg-none mobile-item">
@@ -201,35 +353,46 @@
 											</li>
 											<li class="nav-item d-lg-none mobile-item">
 												<div>
-													<img  src="' . get_stylesheet_directory_uri() . '/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
-													<span>' . $address . '</span>
+													<img  src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
+													<span>' .
+        		$address .
+        		'</span>
 										</div>
 										<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89856445775">
 											8 (985) 644-57-75
 										</a>
 										<div class="mb-2" style="font-size: 12px;  font-family: Gilroy-Light;  text-transform: none;">
-											<img src="' . get_stylesheet_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px" class="me-1 mb-2" />
+											<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px" class="me-1 mb-2" />
 											Ежедневно с 8:00 до 22:00
 										</div>
 										</li>
 										<li class="nav-item d-lg-none pb-4">
 											<a class="ico-button pe-2" href="https://wa.me/79856445775?web=1&app_absent=1" target="blank">
-												<img src="' . get_stylesheet_directory_uri() . '/img/ico/whatsapp-ico.svg" />
+												<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/whatsapp-ico.svg" />
 											</a>
 											<a class="ico-button pe-2" href="https://t.me/+79856445775" target="blank">
-												<img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg" />
+												<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/telegram-ico.svg" />
 											</a>
 											<a class="ico-button pe-0" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="blank">
-												<img src="'.get_stylesheet_directory_uri().'/img/ico/max-ico.svg" />
+												<img src="' .
+        		get_stylesheet_directory_uri() .
+        		'/img/ico/max-ico.svg" />
 											</a>
 										</li>
 										<!-- End mobile menu -->
 										</ul>
 										',
-								'depth' => 2,
-								'walker' => new bootstrap_5_wp_nav_menu_walker()
-							));
-							?>
+        	"depth" => 2,
+        	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+        ]); ?>
 							</div><!-- /#mobail-header-collapse -->
 						</div><!-- /.container -->
 					</nav>
@@ -247,7 +410,7 @@
 				<!-- Левая колонка: заголовок + преимущества -->
 				<div class="col-lg-6 col-xl-7 hero__left">
 					<h1>
-						<span class="hl">Шкафы, гардеробные</span> и&nbsp;другая корпусная мебель на&nbsp;заказ от&nbsp;производителя <span class="hl"><?php echo $location ? $location : 'в&nbsp;Москве'; ?></span>
+						<span class="hl">Шкафы, гардеробные</span> и&nbsp;другая корпусная мебель на&nbsp;заказ от&nbsp;производителя <span class="hl"><?php echo $location ? $location : "в&nbsp;Москве"; ?></span>
 					</h1>
 					<ul class="hero__list">
 						<li>
@@ -323,13 +486,13 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="sliding-header-collapse">
-				<?php
-					wp_nav_menu(array(
-						'theme_location' => 'sliding-header-collapse',
-						'container' => false,
-						'menu_class' => '',
-						'fallback_cb' => '__return_false',
-						'items_wrap' => '
+				<?php wp_nav_menu([
+    	"theme_location" => "sliding-header-collapse",
+    	"container" => false,
+    	"menu_class" => "",
+    	"fallback_cb" => "__return_false",
+    	"items_wrap" =>
+    		'
 								<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-lg-0 %2$s">%3$s
 									<!-- Mobile menu -->
 									<li class="nav-item d-lg-none mobile-item">
@@ -339,33 +502,44 @@
 									</li>
 									<li  class="nav-item d-lg-none mobile-item mobile-schedule mb-md-2">
 										<div class="location-block">
-											<img  src="' . get_stylesheet_directory_uri() . '/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
-											<span>' . $address . '</span>
+											<img  src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
+											<span>' .
+    		$address .
+    		'</span>
 										</div>
 										<a  class="nav-link top-menu-tel pt-1 pb-1"  href="tel:89856445775">
 											8 (985) 644-57-75
 										</a>
-										<img  src="' . get_stylesheet_directory_uri() . '/img/ico/clock-ico.svg"  style="width: 10px; position: relative; top: 2px"  class="me-1 mb-2"/>
+										<img  src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/clock-ico.svg"  style="width: 10px; position: relative; top: 2px"  class="me-1 mb-2"/>
 										Ежедневно с 8:00 до 22:00
 									</li>
 									<li class="nav-item d-lg-none pt-2 pb-4">
 										<a class="ico-button pe-2 text-decoration-none" href="https://wa.me/79856445775?web=1&app_absent=1" target="blank">
-											<img src="' . get_stylesheet_directory_uri() . '/img/ico/whatsapp-ico.svg" />
+											<img src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/whatsapp-ico.svg" />
 										</a>
 										<a class="ico-button pe-2 text-decoration-none" href="https://t.me/+79856445775" target="blank">
-											<img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg" />
+											<img src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/telegram-ico.svg" />
 										</a>
 										<a class="ico-button pe-0 text-decoration-none" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="blank">
-											<img src="'.get_stylesheet_directory_uri().'/img/ico/max-ico.svg" />
+											<img src="' .
+    		get_stylesheet_directory_uri() .
+    		'/img/ico/max-ico.svg" />
 										</a>
 									</li>
 									<!-- End mobile menu -->
 								</ul>
 							',
-						'depth' => 2,
-						'walker' => new bootstrap_5_wp_nav_menu_walker()
-					));
-					?>
+    	"depth" => 2,
+    	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+    ]); ?>
 			</div>
 		</div>
 	</nav>
@@ -389,10 +563,10 @@
 		</div>
 		<div class="row">
 			<div class="col-12 col-md-6 mb-4 mb-md-0">
-				<img src="<?php echo $theme_uri; ?>/img/card/action-card.webp" class="stock__img" loading="lazy" alt="Скидка до 25%. Акция до 30 июня">
+				<img src="<?php echo $theme_uri; ?>/img/card/action-card.webp" class="stock__img" loading="lazy" alt="Скидка до 25%. Акция до 31 июля">
 			</div>
 			<div class="col-12 col-md-6">
-				<img src="<?php echo $theme_uri; ?>/img/card/action-card-2.webp" class="stock__img" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 30 июня">
+				<img src="<?php echo $theme_uri; ?>/img/card/action-card-2.webp" class="stock__img" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 31 июля">
 			</div>
 		</div>
 	</div>
@@ -737,7 +911,7 @@
 <!-- ==========================================================================
      КВИЗ КАЛЬКУЛЯТОРА
      ========================================================================== -->
-<?php get_template_part('template-parts/quiz-new/calculator_quiz-new'); ?>
+<?php get_template_part("template-parts/quiz-new/calculator_quiz-new"); ?>
 
 <!-- ==========================================================================
      КАК МЫ РАБОТАЕМ
@@ -928,7 +1102,7 @@
 
 			<!-- Колонка 1: логотип + контакты -->
 			<div class="col-12 col-lg-3 order-1 order-lg-1">
-				<a class="footer__logo" href="<?php echo home_url('/'); ?>">
+				<a class="footer__logo" href="<?php echo home_url("/"); ?>">
 					<img src="<?php echo $theme_uri; ?>/img/ico/logo.svg" alt="Гарантшкаф" />
 				</a>
 				<div class="footer__contacts">
@@ -949,30 +1123,26 @@
 
 			<!-- Меню (левая колонка) -->
 			<div class="col-6 col-lg-3 order-3 order-lg-2">
-				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'footer-menu-left',
-					'container'      => false,
-					'menu_class'     => 'footer__menu',
-					'depth'          => 2,
-					'fallback_cb'    => '__return_false',
-					'walker'         => new bootstrap_5_wp_nav_menu_walker(),
-				));
-				?>
+				<?php wp_nav_menu([
+    	"theme_location" => "footer-menu-left",
+    	"container" => false,
+    	"menu_class" => "footer__menu",
+    	"depth" => 2,
+    	"fallback_cb" => "__return_false",
+    	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+    ]); ?>
 			</div>
 
 			<!-- Меню (правая колонка) -->
 			<div class="col-6 col-lg-3 order-4 order-lg-3">
-				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'footer-menu-right',
-					'container'      => false,
-					'menu_class'     => 'footer__menu',
-					'depth'          => 2,
-					'fallback_cb'    => '__return_false',
-					'walker'         => new bootstrap_5_wp_nav_menu_walker(),
-				));
-				?>
+				<?php wp_nav_menu([
+    	"theme_location" => "footer-menu-right",
+    	"container" => false,
+    	"menu_class" => "footer__menu",
+    	"depth" => 2,
+    	"fallback_cb" => "__return_false",
+    	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+    ]); ?>
 			</div>
 
 			<!-- Колонка 4: контакты + соцсети -->
@@ -1012,11 +1182,11 @@
 
 	<div class="container">
 		<div id="footer__new">
-			<p class="footer__new__copy">©<?php echo date('Y'); ?> Мебельная фабрика «Гарантшкаф»</p>
+			<p class="footer__new__copy">©<?php echo date("Y"); ?> Мебельная фабрика «Гарантшкаф»</p>
 			<p class="footer__new__dev">Создание, продвижение и поддержка сайтов: <a href="https://site100.ru" target="_blank">site<span>100</span>.ru</a></p>
 		</div>
 	</div>
 </footer>
 
 
-<?php include 'footer.php'; ?>
+<?php include "footer.php"; ?>
