@@ -6,9 +6,7 @@
  * Description: Test 3
  */
 
-include 'header.php';
-
-?>
+include "header.php"; ?>
 
 <!-- SECTION HOME -->
 <div id="sp-home"></div>
@@ -114,13 +112,13 @@ include 'header.php';
 									<span class="navbar-toggler-icon"></span>
 								</button>
 								<div class="collapse navbar-collapse" id="mobail-header-collapse">
-									<?php
-									wp_nav_menu(array(
-										'theme_location' => 'mobail-header-collapse',
-										'container' => false,
-										'menu_class' => '',
-										'fallback_cb' => '__return_false',
-										'items_wrap' => '
+									<?php wp_nav_menu([
+         	"theme_location" => "mobail-header-collapse",
+         	"container" => false,
+         	"menu_class" => "",
+         	"fallback_cb" => "__return_false",
+         	"items_wrap" =>
+         		'
 												<ul id="%1$s" class="navbar-nav align-items-center ms-auto mb-2 mb-lg-0 %2$s">%3$s
 													<!-- Mobile menu -->
 													<li class="nav-item d-lg-none mobile-item">
@@ -130,35 +128,44 @@ include 'header.php';
 													</li>
 													<li class="nav-item d-lg-none mobile-item">
 														<div>
-															<img  src="' . get_stylesheet_directory_uri() . '/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
+															<img  src="' .
+         		get_stylesheet_directory_uri() .
+         		'/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
 															<span><?php echo $address; ?></span>
 								</div>
 								<a class="nav-link top-menu-tel pt-1 pb-1" href="tel:89856445775">
 									8 (985) 644-57-75
 								</a>
 								<div class="mb-2" style="font-size: 12px;  font-family: Gilroy-Light;  text-transform: none;">
-									<img src="' . get_stylesheet_directory_uri() . '/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px" class="me-1 mb-2" />
+									<img src="' .
+         		get_stylesheet_directory_uri() .
+         		'/img/ico/clock-ico.svg" style="width: 10px; position: relative; top: 3px" class="me-1 mb-2" />
 									Ежедневно с 8:00 до 22:00
 								</div>
 								</li>
 								<li class="nav-item d-lg-none pb-4">
 									<a class="ico-button pe-2" href="https://wa.me/79856445775?web=1&app_absent=1" target="blank">
-										<img src="' . get_stylesheet_directory_uri() . '/img/ico/whatsapp-ico.svg" />
+										<img src="' .
+         		get_stylesheet_directory_uri() .
+         		'/img/ico/whatsapp-ico.svg" />
 									</a>
 									<a class="ico-button pe-2" href="https://t.me/+79856445775" target="blank">
-										<img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg" />
+										<img src="' .
+         		get_stylesheet_directory_uri() .
+         		'/img/ico/telegram-ico.svg" />
 									</a>
 									<a class="ico-button pe-0" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="blank">
-										<img src="'.get_stylesheet_directory_uri().'/img/ico/max-ico.svg" />
+										<img src="' .
+         		get_stylesheet_directory_uri() .
+         		'/img/ico/max-ico.svg" />
 									</a>
 								</li>
 								<!-- End mobile menu -->
 								</ul>
 								',
-								'depth' => 2,
-								'walker' => new bootstrap_5_wp_nav_menu_walker()
-								));
-								?>
+         	"depth" => 2,
+         	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+         ]); ?>
 							</div><!-- /#mobail-header-collapse -->
 					</div><!-- /.container -->
 					</nav>
@@ -267,13 +274,13 @@ include 'header.php';
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="sliding-header-collapse">
-					<?php
-					wp_nav_menu(array(
-						'theme_location' => 'sliding-header-collapse',
-						'container' => false,
-						'menu_class' => '',
-						'fallback_cb' => '__return_false',
-						'items_wrap' => '
+					<?php wp_nav_menu([
+     	"theme_location" => "sliding-header-collapse",
+     	"container" => false,
+     	"menu_class" => "",
+     	"fallback_cb" => "__return_false",
+     	"items_wrap" =>
+     		'
 								<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-lg-0 %2$s">%3$s
 									<!-- Mobile menu -->
 									<li class="nav-item d-lg-none mobile-item">
@@ -283,33 +290,44 @@ include 'header.php';
 									</li>
 									<li  class="nav-item d-lg-none mobile-item mobile-schedule mb-md-2">
 										<div class="location-block">
-											<img  src="' . get_stylesheet_directory_uri() . '/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
-											<span>' . $address . '</span>
+											<img  src="' .
+     		get_stylesheet_directory_uri() .
+     		'/img/ico/location-ico.svg"  style="width: 10px" class="me-1"/>
+											<span>' .
+     		$address .
+     		'</span>
 										</div>
 										<a  class="nav-link top-menu-tel pt-1 pb-1"  href="tel:89856445775">
 											8 (985) 644-57-75
 										</a>
-										<img  src="' . get_stylesheet_directory_uri() . '/img/ico/clock-ico.svg"  style="width: 10px; position: relative; top: 2px"  class="me-1 mb-2"/>
+										<img  src="' .
+     		get_stylesheet_directory_uri() .
+     		'/img/ico/clock-ico.svg"  style="width: 10px; position: relative; top: 2px"  class="me-1 mb-2"/>
 										Ежедневно с 8:00 до 22:00
 									</li>
 									<li class="nav-item d-lg-none pt-2 pb-4">
 										<a class="ico-button pe-2 text-decoration-none" href="https://wa.me/79856445775?web=1&app_absent=1" target="blank">
-											<img src="' . get_stylesheet_directory_uri() . '/img/ico/whatsapp-ico.svg" />
+											<img src="' .
+     		get_stylesheet_directory_uri() .
+     		'/img/ico/whatsapp-ico.svg" />
 										</a>
 										<a class="ico-button pe-2 text-decoration-none" href="https://t.me/+79856445775" target="blank">
-											<img src="'.get_stylesheet_directory_uri().'/img/ico/telegram-ico.svg" />
+											<img src="' .
+     		get_stylesheet_directory_uri() .
+     		'/img/ico/telegram-ico.svg" />
 										</a>
 										<a class="ico-button pe-0 text-decoration-none" href="https://max.ru/u/f9LHodD0cOJpxVina4POaWorB_iFOHaIWOB_hVCMqBZT5lketcgqeZcBwAc" target="blank">
-											<img src="'.get_stylesheet_directory_uri().'/img/ico/max-ico.svg" />
+											<img src="' .
+     		get_stylesheet_directory_uri() .
+     		'/img/ico/max-ico.svg" />
 										</a>
 									</li>
 									<!-- End mobile menu -->
 								</ul>
 							',
-						'depth' => 2,
-						'walker' => new bootstrap_5_wp_nav_menu_walker()
-					));
-					?>
+     	"depth" => 2,
+     	"walker" => new bootstrap_5_wp_nav_menu_walker(),
+     ]); ?>
 				</div>
 			</div>
 		</nav>
@@ -342,7 +360,7 @@ include 'header.php';
 				<div class="col-12 col-md-6 mb-3 mb-md-0 section-image order-1 order-md-0">
 					<div class="single-image-wrapper">
 						<div class="approximation img-wrapper position-relative gallery-2691">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card.webp" class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Скидка до 25%. Акция до 30 июня">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card.webp" class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Скидка до 25%. Акция до 31 июля">
 						</div>
 					</div>
 				</div>
@@ -350,7 +368,7 @@ include 'header.php';
 				<div class="col-12 col-md-6 mb-0 section-image order-1 order-md-0">
 					<div class="single-image-wrapper">
 						<div class="approximation img-wrapper position-relative gallery-2691">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card-2.webp" class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 30 июня">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/card/action-card-2.webp" class="d-block w-100 single-product-img rounded-large" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 31 июля">
 						</div>
 					</div>
 				</div>
@@ -361,17 +379,17 @@ include 'header.php';
 <!-- End video section -->
 
 
-<?php get_template_part('template-parts/portfolio-masonry-gallery/portfolio-masonry-gallery', null, [
-    'background_color' => '',
-    'category' => '021-шкафы-купе',
-    'section_title' => 'Наши последние работы и цены',
-    'section_description' => '',
-    'posts_count' => 30,
-    'card_type' => 'zoom-card',
-    'show_button' => true,
-    'button_text' => 'Смотреть все',
-    'show_card_title' => true,
-    'show_modal_button'  => true,    
+<?php get_template_part("template-parts/portfolio-masonry-gallery/portfolio-masonry-gallery", null, [
+	"background_color" => "",
+	"category" => "021-шкафы-купе",
+	"section_title" => "Наши последние работы и цены",
+	"section_description" => "",
+	"posts_count" => 30,
+	"card_type" => "zoom-card",
+	"show_button" => true,
+	"button_text" => "Смотреть все",
+	"show_card_title" => true,
+	"show_modal_button" => true,
 ]); ?>
 
 <!-- Archive portfolio section -->
@@ -387,95 +405,95 @@ include 'header.php';
 
 			<div class="col-md-9">
 				<?php
-				// Получаем все записи портфолио
-				$args = [
-					'post_type' => 'portfolio',
-					'numberposts' => 15,
-					'posts_per_page' => 15,
-					'portfolio-cat' => '021-шкафы-купе'
-				];
+    // Получаем все записи портфолио
+    $args = [
+    	"post_type" => "portfolio",
+    	"numberposts" => 15,
+    	"posts_per_page" => 15,
+    	"portfolio-cat" => "021-шкафы-купе",
+    ];
 
-				$query = new WP_Query($args);
-				$all_images = []; // Массив всех изображений
-				$portfolio_data = []; // Данные портфолио
-				$image_index = 0; // Глобальный индекс изображений
-				
-				// Собираем все изображения в один массив
-				while ($query->have_posts()):
-					$query->the_post();
-					$portfolio_images = [];
+    $query = new WP_Query($args);
+    $all_images = []; // Массив всех изображений
+    $portfolio_data = []; // Данные портфолио
+    $image_index = 0; // Глобальный индекс изображений
 
-					// Собираем изображения текущего портфолио
-					for ($i = 1; $i <= 9; $i++) {
-						$img_url = get_post_meta($post->ID, '_img-' . $i, true);
-						if ($img_url) {
-							$portfolio_images[] = $img_url;
-							$all_images[] = [
-								'url' => $img_url,
-								'portfolio_id' => $post->ID,
-								'portfolio_title' => get_the_title()
-							];
-						}
-					}
+    // Собираем все изображения в один массив
+    while ($query->have_posts()):
+    	$query->the_post();
+    	$portfolio_images = [];
 
-					// Сохраняем данные портфолио
-					if (!empty($portfolio_images)) {
-						$portfolio_data[] = [
-							'id' => $post->ID,
-							'title' => get_the_title(),
-							'images' => $portfolio_images,
-							'start_index' => $image_index // С какого индекса начинается в общем массиве
-						];
-						$image_index += count($portfolio_images);
-					}
-				endwhile;
-				wp_reset_postdata();
+    	// Собираем изображения текущего портфолио
+    	for ($i = 1; $i <= 9; $i++) {
+    		$img_url = get_post_meta($post->ID, "_img-" . $i, true);
+    		if ($img_url) {
+    			$portfolio_images[] = $img_url;
+    			$all_images[] = [
+    				"url" => $img_url,
+    				"portfolio_id" => $post->ID,
+    				"portfolio_title" => get_the_title(),
+    			];
+    		}
+    	}
 
-				/**
-				 * Алгоритм равномерного распределения элементов по колонкам (Balanced Column Distribution)
-				 * 
-				 * Принцип работы: каждый новый элемент добавляется в колонку с наименьшей текущей высотой.
-				 * Это помогает избежать ситуации, когда одна колонка становится значительно выше других.
-				 * 
-				 * @var array $columns Массив колонок с элементами
-				 * @var array $column_heights Счетчики высоты каждой колонки в пикселях
-				 */
+    	// Сохраняем данные портфолио
+    	if (!empty($portfolio_images)) {
+    		$portfolio_data[] = [
+    			"id" => $post->ID,
+    			"title" => get_the_title(),
+    			"images" => $portfolio_images,
+    			"start_index" => $image_index, // С какого индекса начинается в общем массиве
+    		];
+    		$image_index += count($portfolio_images);
+    	}
+    endwhile;
+    wp_reset_postdata();
 
-				// Умное распределение постов по 3 колонкам для выравнивания высоты
-				$columns = [[], [], []];
-				$column_heights = [0, 0, 0]; // Примерная высота каждой колонки
-				
-				foreach ($portfolio_data as $portfolio) {
-					// Находим колонку с наименьшей высотой
-					$min_height_column = array_search(min($column_heights), $column_heights);
+    /**
+     * Алгоритм равномерного распределения элементов по колонкам (Balanced Column Distribution)
+     *
+     * Принцип работы: каждый новый элемент добавляется в колонку с наименьшей текущей высотой.
+     * Это помогает избежать ситуации, когда одна колонка становится значительно выше других.
+     *
+     * @var array $columns Массив колонок с элементами
+     * @var array $column_heights Счетчики высоты каждой колонки в пикселях
+     */
 
-					// Добавляем пост в эту колонку
-					$columns[$min_height_column][] = $portfolio;
+    // Умное распределение постов по 3 колонкам для выравнивания высоты
+    $columns = [[], [], []];
+    $column_heights = [0, 0, 0]; // Примерная высота каждой колонки
 
-					// Более точная оценка высоты на основе первого изображения
-					$first_image = $portfolio['images'][0];
-					$estimated_height = 250; // Базовая высота
-				
-					// Пытаемся получить размеры изображения для более точного расчета
-					$image_path = str_replace(home_url(), ABSPATH, $first_image);
-					if (file_exists($image_path)) {
-						$image_size = getimagesize($image_path);
-						if ($image_size) {
-							$width = $image_size[0];
-							$height = $image_size[1];
-							// Рассчитываем высоту при фиксированной ширине колонки (примерно 400px)
-							$estimated_height = ($height / $width) * 400;
-							// Ограничиваем минимум и максимум
-							$estimated_height = max(200, min(400, $estimated_height));
-						}
-					}
+    foreach ($portfolio_data as $portfolio) {
+    	// Находим колонку с наименьшей высотой
+    	$min_height_column = array_search(min($column_heights), $column_heights);
 
-					// Добавляем небольшой отступ
-					$estimated_height += 30;
+    	// Добавляем пост в эту колонку
+    	$columns[$min_height_column][] = $portfolio;
 
-					$column_heights[$min_height_column] += $estimated_height;
-				}
-				?>
+    	// Более точная оценка высоты на основе первого изображения
+    	$first_image = $portfolio["images"][0];
+    	$estimated_height = 250; // Базовая высота
+
+    	// Пытаемся получить размеры изображения для более точного расчета
+    	$image_path = str_replace(home_url(), ABSPATH, $first_image);
+    	if (file_exists($image_path)) {
+    		$image_size = getimagesize($image_path);
+    		if ($image_size) {
+    			$width = $image_size[0];
+    			$height = $image_size[1];
+    			// Рассчитываем высоту при фиксированной ширине колонки (примерно 400px)
+    			$estimated_height = ($height / $width) * 400;
+    			// Ограничиваем минимум и максимум
+    			$estimated_height = max(200, min(400, $estimated_height));
+    		}
+    	}
+
+    	// Добавляем небольшой отступ
+    	$estimated_height += 30;
+
+    	$column_heights[$min_height_column] += $estimated_height;
+    }
+    ?>
 
 				<div class="row portfolio-columns">
 					<?php foreach ($columns as $column_posts): ?>
@@ -483,23 +501,23 @@ include 'header.php';
 							<div class="col-lg-4 col-md-6 col-sm-12 portfolio-column">
 								<?php foreach ($column_posts as $portfolio): ?>
 									<div class="portfolio-item mb-4">
-										<?php $image_count = count($portfolio['images']); ?>
+										<?php $image_count = count($portfolio["images"]); ?>
 
 										<?php if ($image_count > 1): ?>
-											<div id="carousel-<?php echo $portfolio['id']; ?>" class="carousel slide" data-bs-ride="carousel"
+											<div id="carousel-<?php echo $portfolio["id"]; ?>" class="carousel slide" data-bs-ride="carousel"
 												data-bs-interval="999999999">
 												<div class="carousel-indicators" style="bottom: 5%;">
 													<?php for ($i = 0; $i < $image_count; $i++): ?>
-														<button type="button" data-bs-target="#carousel-<?php echo $portfolio['id']; ?>"
-															data-bs-slide-to="<?php echo $i; ?>" <?php echo $i === 0 ? 'class="active"' : ''; ?>
+														<button type="button" data-bs-target="#carousel-<?php echo $portfolio["id"]; ?>"
+															data-bs-slide-to="<?php echo $i; ?>" <?php echo $i === 0 ? 'class="active"' : ""; ?>
 															aria-label="Slide <?php echo $i + 1; ?>"></button>
 													<?php endfor; ?>
 												</div>
 
 												<div class="carousel-inner">
-													<?php foreach ($portfolio['images'] as $index => $img_url): ?>
-														<div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-															<a href="#" onclick="openGallery(<?php echo $portfolio['start_index'] + $index; ?>); return false;">
+													<?php foreach ($portfolio["images"] as $index => $img_url): ?>
+														<div class="carousel-item <?php echo $index === 0 ? "active" : ""; ?>">
+															<a href="#" onclick="openGallery(<?php echo $portfolio["start_index"] + $index; ?>); return false;">
 																<div class="single-product-img approximation position-relative">
 																	<img src="<?php echo $img_url; ?>" class="rounded w-100" alt="..." loading="lazy">
 																	<div class="magnifier"></div>
@@ -510,19 +528,19 @@ include 'header.php';
 												</div>
 
 												<button class="carousel-control-prev" type="button"
-													data-bs-target="#carousel-<?php echo $portfolio['id']; ?>" data-bs-slide="prev">
+													data-bs-target="#carousel-<?php echo $portfolio["id"]; ?>" data-bs-slide="prev">
 													<span class="carousel-control-prev-icon"></span>
 												</button>
 												<button class="carousel-control-next" type="button"
-													data-bs-target="#carousel-<?php echo $portfolio['id']; ?>" data-bs-slide="next">
+													data-bs-target="#carousel-<?php echo $portfolio["id"]; ?>" data-bs-slide="next">
 													<span class="carousel-control-next-icon"></span>
 												</button>
 											</div>
 										<?php else: ?>
 											<div>
-												<a href="#" onclick="openGallery(<?php echo $portfolio['start_index']; ?>); return false;">
+												<a href="#" onclick="openGallery(<?php echo $portfolio["start_index"]; ?>); return false;">
 													<div class="single-product-img approximation position-relative">
-														<img src="<?php echo $portfolio['images'][0]; ?>" class="rounded w-100" alt="..."
+														<img src="<?php echo $portfolio["images"][0]; ?>" class="rounded w-100" alt="..."
 															loading="lazy">
 														<div class="magnifier"></div>
 													</div>
@@ -566,7 +584,7 @@ include 'header.php';
 			<?php foreach ($all_images as $index => $image): ?>
 			<div class="carousel-item h-100" data-bs-interval="99999999999">
 				<div class="d-flex align-items-center justify-content-center h-100">
-					<img src="<?php echo $image['url']; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="<?php echo $image['portfolio_title']; ?>">
+					<img src="<?php echo $image["url"]; ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="<?php echo $image["portfolio_title"]; ?>">
 				</div>
 			</div>
 			<?php endforeach; ?>
@@ -670,7 +688,7 @@ document.addEventListener('keydown', function(e) {
 
 
 <!-- SECTION ORDER 1 -->
-<?php get_template_part('template-parts/quiz/quiz'); ?>
+<?php get_template_part("template-parts/quiz/quiz"); ?>
 <!-- /SECTION ORDER 1 -->
 
 <!-- SECTION ABOUT -->
@@ -886,9 +904,9 @@ document.addEventListener('keydown', function(e) {
 
 <!-- Testimonials section -->
 <div id="sp-testimonials"></div>
-<?php get_template_part('template-parts/reviews-section/reviews-section_new', null, array(
-    'bg_color' => ' ', 
-)); ?>
+<?php get_template_part("template-parts/reviews-section/reviews-section_new", null, [
+	"bg_color" => " ",
+]); ?>
 <!-- <section class="section-testimonials">
 	<div class="container"
 		style="max-width: 1700px;  padding-top: 80px; padding-bottom: 50px; border-right: 1px solid rgba(153, 153, 153, 0.9);  border-left: 1px solid rgba(153, 153, 153, 0.9);">
@@ -1454,7 +1472,7 @@ function question3() {
 		</div>
 		<div id="footer1" class="row align-items-center">
 			<div class="col">
-				<p class="font-weight-bold text-center mb-0">©<?php echo date('Y'); ?>г. Мебельная фабрика «Гарантшкаф»</p>
+				<p class="font-weight-bold text-center mb-0">©<?php echo date("Y"); ?>г. Мебельная фабрика «Гарантшкаф»</p>
 				<p class="font-weight-light m-0 text-center fs-16">Создание, продвижение и поддержка сайтов: <a href="https://site100.ru" target="_blank">site<span class="text-danger">100</span>.ru</a></p>
 			</div>
 		</div>
@@ -1462,4 +1480,4 @@ function question3() {
 </footer>
 
 
-<?php include 'footer.php'; ?>
+<?php include "footer.php"; ?>
