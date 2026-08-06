@@ -1,6 +1,6 @@
 <?php
 
-/* Register a new menu */
+/* Register a new menu  */
 add_action( 'after_setup_theme', function() {
 	register_nav_menus( [
 		'main-menu' => 'Main menu',
