@@ -304,10 +304,10 @@ include "header.php"; ?>
 		</div>
 		<div class="row">
 			<div class="col-12 col-md-6 mb-4 mb-md-0">
-				<img src="<?php echo $theme_uri; ?>/img/card/action-card.webp" class="stock__img" loading="lazy" alt="Скидка до 25%. Акция до 31 августа">
+				<img src="<?php echo $theme_uri; ?>/img/card/action-card.webp" class="stock__img" loading="lazy" alt="Скидка до 25%. Акция до 30 сентября">
 			</div>
 			<div class="col-12 col-md-6">
-				<img src="<?php echo $theme_uri; ?>/img/card/action-card-2.webp" class="stock__img" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 31 августа">
+				<img src="<?php echo $theme_uri; ?>/img/card/action-card-2.webp" class="stock__img" loading="lazy" alt="Беспроцентная рассрочка на 1 год. Акция до 30 сентября">
 			</div>
 		</div>
 	</div>
