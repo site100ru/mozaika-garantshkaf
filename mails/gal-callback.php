@@ -3,7 +3,7 @@
 	session_start();
 	$win = "true";
 	
-	if ( $_POST ) {
+	/*if ( $_POST ) {
 		function getCaptcha($SecretKey){
 			$Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdV1IcUAAAAABnQ0mXIp5Yh7tLEcAXzdqG6rx9Y&response={$SecretKey}");
 			$Return = json_decode($Response);
@@ -11,7 +11,7 @@
 		}
 		
 		$Return = getCaptcha($_POST['g-recaptcha-response']);
-		if ( $Return->success == true && $Return->score > .1 ) {
+		if ( $Return->success == true && $Return->score > .1 ) { */
 	
 			$name    = $_POST['name'];
 			$tel     = $_POST['tel'];
@@ -38,10 +38,10 @@
 			$_SESSION['recaptcha'] = '<p class="text-light">Спасибо за обращение в компанию «ГАРАНТШКАФ». Мы ответим Вам в&#160;ближайшее время.</p>';
 			header("Location: ".$_SERVER['HTTP_REFERER']);
 			
-		} else {
+		/*} else {
 			$_SESSION['win'] = 1;
 			$_SESSION['recaptcha'] = '<p class="text-light"><strong>Извините!</strong><br>Ваши действия похожи на робота. Пожалуйста повторите попытку!</p>';
 			header("Location: ".$_SERVER['HTTP_REFERER']);
-		}
-	}
+		}*/
+	/*}*/
 ?>
