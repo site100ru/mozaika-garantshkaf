@@ -3,6 +3,16 @@
 	session_start();
 	$win = "true";
 	
+	// Если прикреплённые файлы слишком большие для сервера, он отбрасывает всю форму целиком:
+	// и поля, и файлы приходят пустыми. Без этой проверки заявка молча бы не отправилась,
+	// поэтому сообщаем клиенту, в чём дело.
+	if ( empty( $_POST ) && !empty( $_SERVER['CONTENT_LENGTH'] ) ) {
+		$_SESSION['win'] = 1;
+		$_SESSION['recaptcha'] = '<p class="text-light">Прикреплённые файлы слишком большие. Уменьшите их размер или прикрепите меньше файлов и повторите попытку.</p>';
+		header("Location: ".$_SERVER['HTTP_REFERER']);
+		exit();
+	}
+	
 	/* Если существует переменная POST, то
 	if ( $_POST ) {
 		// Отправляем данные в Google
@@ -49,14 +59,88 @@
 			}
 			
 			//garantshkaf@mail.ru, vasilyev-r@mail.ru
-			$to 	 = 'sidorov-vv3@mail.ru';
+			$to 	 = 'garantshkaf@mail.ru, vasilyev-r@mail.ru';
 			$from 	 = 'info@garantshkaf.ru';
 			$subject = 'Заявка на расчет стоимости с сайта garantshkaf.ru';
 			 
 			
-			// Проверяем есть ли загруженные файлы
-			// Если есть, то отправляем этим способом
-			if ( $_FILES['file']["name"][0] != null ) {
+			// Не более 10 МБ на один файл
+			$max_file_size = 10 * 1024 * 1024;
+
+			// Но если хостинг разрешает загружать файлы меньшего размера, лимитом считаем его —
+			// чтобы в сообщении клиенту была указана реальная цифра.
+			// Настройка записывается как «2M», «512K», «1G» — переводим её в байты.
+			$server_limit = trim( ini_get( 'upload_max_filesize' ) );
+			$server_limit_bytes = (int) $server_limit;
+			switch ( strtoupper( substr( $server_limit, -1 ) ) ) {
+				// break не нужен: для «G» умножаем трижды, для «M» — дважды, для «K» — один раз
+				case 'G': $server_limit_bytes *= 1024;
+				case 'M': $server_limit_bytes *= 1024;
+				case 'K': $server_limit_bytes *= 1024;
+			}
+			if ( $server_limit_bytes > 0 && $server_limit_bytes < $max_file_size ) {
+				$max_file_size = $server_limit_bytes;
+			}
+			$max_file_size_mb = round( $max_file_size / 1024 / 1024, 1 );
+
+			// Какие файлы можно прикреплять: расширение => тип файла для письма.
+			// Формат определяем по расширению, а не по типу, который присылает браузер:
+			// разные телефоны и браузеры присылают для одного и того же фото разные типы
+			// (image/jpg, image/heic, application/octet-stream), и хорошие файлы отбраковывались.
+			$allowed_types = array(
+				'jpg'  => 'image/jpeg',
+				'jpeg' => 'image/jpeg',
+				'png'  => 'image/png',
+				'pdf'  => 'application/pdf',
+				'heic' => 'image/heic',
+				'heif' => 'image/heif',
+			);
+			
+			// Проверяем каждый прикреплённый файл и собираем подходящие в список
+			$attachments = array();
+			
+			if ( isset( $_FILES['file']['name'] ) && is_array( $_FILES['file']['name'] ) ) {
+				foreach ( $_FILES['file']['name'] as $key => $file_name ) {
+					$file_error = $_FILES['file']['error'][$key];
+					
+					// Файл не выбран — пропускаем
+					if ( $file_error == UPLOAD_ERR_NO_FILE ) {
+						continue;
+					}
+					
+					$file_ext   = strtolower( pathinfo( $file_name, PATHINFO_EXTENSION ) );
+					$safe_name  = htmlspecialchars( $file_name );
+					$file_problem = '';
+					
+					if ( !isset( $allowed_types[$file_ext] ) ) {
+						// Неподходящий формат
+						$file_problem = 'Файл «' . $safe_name . '» в неподходящем формате. Можно прикреплять файлы .jpg, .jpeg, .png, .pdf или .heic.';
+					} elseif ( $file_error == UPLOAD_ERR_INI_SIZE || $file_error == UPLOAD_ERR_FORM_SIZE || $_FILES['file']['size'][$key] > $max_file_size ) {
+						// Файл больше нашего лимита или лимита сервера
+						$file_problem = 'Файл «' . $safe_name . '» слишком большой. Размер одного файла — не более ' . $max_file_size_mb . ' МБ.';
+					} elseif ( $file_error != UPLOAD_ERR_OK || !is_uploaded_file( $_FILES['file']['tmp_name'][$key] ) ) {
+						// Файл не дошёл до сервера (обрыв связи и т.п.)
+						$file_problem = 'Не удалось загрузить файл «' . $safe_name . '». Пожалуйста, попробуйте ещё раз.';
+					}
+					
+					// С файлом проблема — заявку не отправляем и объясняем клиенту причину
+					if ( $file_problem ) {
+						$_SESSION['win'] = 1;
+						$_SESSION['recaptcha'] = '<p class="text-light">' . $file_problem . '</p>';
+						header("Location: ".$_SERVER['HTTP_REFERER']);
+						exit();
+					}
+					
+					$attachments[] = array(
+						'name' => $file_name,
+						'type' => $allowed_types[$file_ext],
+						'path' => $_FILES['file']['tmp_name'][$key],
+					);
+				}
+			}
+			
+			// Если есть подходящие файлы, то отправляем письмо с вложениями
+			if ( $attachments ) {
 				
 				$EOL = "\r\n"; // ограничитель строк, некоторые почтовые сервера требуют \n - подобрать опытным путём
 				$boundary     = "--".md5(uniqid(time()));  // любая строка, которой не будет ниже в потоке данных.
@@ -65,8 +149,8 @@
 
 				$headers    = "MIME-Version: 1.0;$EOL";   
 				$headers   .= "Content-Type: multipart/mixed; boundary=\"$boundary\"$EOL";  
-				$headers   .= "From: $from\r\n"; 
-				
+				$headers   .= "From: $from\r\n";
+
 				$message    = "
 					<strong>Имя:</strong> ".$name."<br><br>
 					<strong>Телефон:</strong> ".$tel."<br><br>
@@ -83,31 +167,16 @@
 
 				#начало вставки файлов
 
-				foreach($_FILES["file"]["name"] as $key => $value){
-					$filename = $_FILES["file"]["tmp_name"][$key];
-					$file_type = $_FILES["file"]["type"][$key];
-					$file_size = $_FILES["file"]["size"][$key];
-					
-					// Проверяем файлы на подходимость
-					if ( ( $file_type == 'image/png' OR  $file_type == 'image/jpeg' OR $file_type ==  'application/pdf' OR $file_type == 'application/octet-stream' ) and ( $file_size < 5120000 ) ) {
-						$file = fopen($filename, "rb");
-						$data = fread($file,  filesize( $filename ) );
-						fclose($file);
-						$NameFile = $_FILES["file"]["name"][$key]; // в этой переменной надо сформировать имя файла (без всякого пути);
-						$File = $data;
-						$multipart .= "$EOL--$boundary$EOL";   
-						$multipart .= "Content-Type: application/octet-stream; name=\"$NameFile\"$EOL";   
-						$multipart .= "Content-Transfer-Encoding: base64$EOL";   
-						$multipart .= "Content-Disposition: attachment; filename=\"$NameFile\"$EOL";   
-						$multipart .= $EOL; // раздел между заголовками и телом прикрепленного файла 
-						$multipart .= chunk_split(base64_encode($File));
-					} else {
-						$_SESSION['win'] = 1;
-						$_SESSION['recaptcha'] = '<p class="text-light">Вы пытаетесь загрузить неподходящий формат или размер одного или нескольких файлов. Файлы должны быть в формате .jpg, .jpeg, .png, .pdf или .heic и размером не более 5 МБ каждый. Пожалуйста повторите попытку.</p>';
-						header("Location: ".$_SERVER['HTTP_REFERER']);
-						exit();
-					}
-
+				foreach ( $attachments as $attachment ) {
+					// Имя файла кодируем, чтобы русские буквы в названии не ломали письмо
+					$NameFile = '=?utf-8?B?' . base64_encode( $attachment['name'] ) . '?=';
+					$File = file_get_contents( $attachment['path'] );
+					$multipart .= "$EOL--$boundary$EOL";   
+					$multipart .= "Content-Type: {$attachment['type']}; name=\"$NameFile\"$EOL";   
+					$multipart .= "Content-Transfer-Encoding: base64$EOL";   
+					$multipart .= "Content-Disposition: attachment; filename=\"$NameFile\"$EOL";   
+					$multipart .= $EOL; // раздел между заголовками и телом прикрепленного файла 
+					$multipart .= chunk_split(base64_encode($File));
 				}
 
 				#>>конец вставки файлов

@@ -48,7 +48,7 @@
 	if ( $_POST['phone'] AND $_POST['answer6'] ) {
 		// Если поле с телефоно заполненно
 		//garantshkaf@mail.ru, vasilyev-r@mail.ru
-		mail( "sidorov-vv3@mail.ru", "Заявка с Квиза с сайта garantshkaf.ru", "
+		mail( "garantshkaf@mail.ru, vasilyev-r@mail.ru", "Заявка с Квиза с сайта garantshkaf.ru", "
 			Имя: " . $name ."<br><br>
 			Телефон: " . $phone ."<br><br>
 			Тип мебели: " . $answer1 ."<br><br>
