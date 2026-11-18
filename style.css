@@ -2,15 +2,16 @@
 Theme Name: Mozaika-Garantshkaf
 Template: mozaika
 */
- 
- 
- 
- /*** OTHER ***/
+
+
+
+/*** OTHER ***/
 .home-section input,
 .home-section textarea {
-	color: white !important
+    color: white !important
 }
- /*** END OTHER ***/
+
+/*** END OTHER ***/
 
 
 
@@ -18,7 +19,9 @@ Template: mozaika
 input.btn.btn-danger {
     min-width: 150px;
 }
-button.btn.btn-danger, input.btn.btn-danger {
+
+button.btn.btn-danger,
+input.btn.btn-danger {
     background: linear-gradient(91.89deg, #FC4A1A -16.07%, #F7B733 124.94%);
     border-radius: var(--border-radius-medium);
     border: none;
@@ -56,6 +59,7 @@ input.btn.btn-corporate-color-outline-1:hover {
     background: linear-gradient(91.89deg, #FC4A1A -16.07%, #F7B733 124.94%);
     color: #F5F5F5;
 }
+
 /*** END BUTTONS ***/
 
 
@@ -65,11 +69,14 @@ section#answers .accordion-button::after,
 section#answers .accordion-button:not(.collapsed)::after {
     background-image: url(img/ico/accordion-arrow.svg);
 }
+
 /*** END FAQ SECTION ***/
 
 
 
 /*** SECTION FOOTER ***/
 footer#footer {
-	text-align: inherit;
+    text-align: inherit;
 }
+
+.test {}
